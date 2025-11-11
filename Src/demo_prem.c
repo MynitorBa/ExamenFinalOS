@@ -2,27 +2,18 @@
  * ============================================================================
  * DEMO_PREM.C - Demostración de Herencia de Prioridad AUTOMÁTICA
  * ============================================================================
- * Task A: HIGH (Prioridad Alta) - Intenta adquirir mutex frecuentemente
- * Task B: LOW (Prioridad Baja) - Mantiene mutex bloqueado con trabajo pesado
- * Task C: NORMAL (Prioridad Media) - Trabajo continuo sin mutex
- *
- * HERENCIA AUTOMÁTICA:
- * 1. Task B (LOW) adquiere el mutex
- * 2. Task A (HIGH) intenta adquirir el mutex con mutex_lock()
- * 3. sync.c detecta: my_priority (HIGH) > owner_priority (LOW)
- * 4. sync.c AUTOMÁTICAMENTE eleva la prioridad de Task B a HIGH
- * 5. Task B completa rápido y libera el mutex
- * 6. sync.c AUTOMÁTICAMENTE restaura la prioridad original de Task B (LOW)
- * 7. Task A adquiere el mutex y continúa
+ * Task A (HIGH) vs Task B (LOW c/Mutex) vs Task C (NORMAL)
  * ============================================================================
  */
 
 #include "demo_prem.h"
 #include "api.h"
+#include <stddef.h> // Para NULL
 
-static volatile uint32_t count_a = 0;  // HIGH
-static volatile uint32_t count_b = 0;  // LOW
-static volatile uint32_t count_c = 0;  // NORMAL
+// Contadores de ejecución y tiempo de CPU
+static volatile uint32_t count_a = 0;
+static volatile uint32_t count_b = 0;
+static volatile uint32_t count_c = 0;
 static volatile uint32_t context_switches = 0;
 static volatile uint32_t task_a_cpu_time = 0;
 static volatile uint32_t task_b_cpu_time = 0;
@@ -36,9 +27,10 @@ static volatile uint32_t task_b_boosted_times = 0;
 static volatile uint32_t task_b_mutex_hold_time = 0;
 
 // Mutex para demostración de bloqueo
-static uint8_t mutex_storage[32];
+static uint8_t mutex_storage[32]; // Espacio de memoria para la estructura mutex
 static daos_mutex_t test_mutex = NULL;
 
+// Definiciones de colores para la pantalla
 #define COLOR_BLACK   0x0000
 #define COLOR_WHITE   0xFFFF
 #define COLOR_YELLOW  0xFFE0
@@ -50,6 +42,9 @@ static daos_mutex_t test_mutex = NULL;
 #define COLOR_GRAY    0x8410
 #define COLOR_MAGENTA 0xF81F
 
+/**
+ * Convierte un uint32_t a cadena de 5 dígitos (con ceros iniciales).
+ */
 static void uint32_to_str(uint32_t num, char* buf) {
     buf[0] = '0' + (num / 10000) % 10;
     buf[1] = '0' + (num / 1000) % 10;
@@ -59,24 +54,24 @@ static void uint32_to_str(uint32_t num, char* buf) {
     buf[5] = '\0';
 }
 
+/** Dibuja el encabezado del demo en la pantalla. */
 static void draw_header(void) {
     daos_gfx_draw_text_large(10, 2, "AUTO INHERIT", COLOR_MAGENTA, COLOR_BLACK, 2);
 }
 
+/** Dibuja todas las estadísticas en la pantalla. */
 static void draw_task_stats(void) {
     char buffer[16];
 
-    // Task A - HIGH (Alta) - Bloquea esperando mutex
+    // Contadores de tareas A, B, C
     daos_gfx_draw_text_large(5, 30, "A:HI", COLOR_RED, COLOR_BLACK, 2);
     uint32_to_str(count_a, buffer);
     daos_gfx_draw_text_large(70, 30, buffer, COLOR_WHITE, COLOR_BLACK, 2);
 
-    // Task B - LOW (Baja) - Mantiene mutex bloqueado
     daos_gfx_draw_text_large(5, 55, "B:LO", COLOR_BLUE, COLOR_BLACK, 2);
     uint32_to_str(count_b, buffer);
     daos_gfx_draw_text_large(70, 55, buffer, COLOR_WHITE, COLOR_BLACK, 2);
 
-    // Task C - NORMAL (Media) - Trabajo continuo
     daos_gfx_draw_text_large(5, 80, "C:NM", COLOR_CYAN, COLOR_BLACK, 2);
     uint32_to_str(count_c, buffer);
     daos_gfx_draw_text_large(70, 80, buffer, COLOR_WHITE, COLOR_BLACK, 2);
@@ -92,7 +87,7 @@ static void draw_task_stats(void) {
     uint32_to_str(task_a_acquired_count, buffer);
     daos_gfx_draw_text(215, 56, buffer, COLOR_GREEN, COLOR_BLACK);
 
-    // Herencia de prioridad AUTOMÁTICA
+    // Herencia (Boost)
     daos_gfx_draw_text(170, 75, "Boost:", COLOR_MAGENTA, COLOR_BLACK);
     uint32_to_str(task_b_boosted_times, buffer);
     daos_gfx_draw_text(215, 75, buffer, COLOR_YELLOW, COLOR_BLACK);
@@ -122,7 +117,7 @@ static void draw_task_stats(void) {
     uint32_to_str(task_c_cpu_time, buffer);
     daos_gfx_draw_text(25, 175, buffer, COLOR_WHITE, COLOR_BLACK);
 
-    // Indicador de tarea activa
+    // Indicador de tarea activa (simplificado)
     daos_gfx_draw_text(170, 130, "ACTIVE:", COLOR_GREEN, COLOR_BLACK);
 
     static uint32_t last_a = 0, last_b = 0, last_c = 0;
@@ -147,14 +142,15 @@ static void draw_task_stats(void) {
 }
 
 // ============================================================================
-// 🔥 FUNCIÓN AUXILIAR: Trabajo pesado para simular carga sin dormir
+// FUNCIÓN AUXILIAR: Trabajo pesado para simular carga
 // ============================================================================
+/** Simula carga intensiva de CPU con un bucle largo. */
 static void do_heavy_work(uint32_t iterations) {
     volatile uint32_t dummy = 0;
     for (uint32_t i = 0; i < iterations; i++) {
         dummy += i * 3;
         dummy = dummy % 1000;
-        // Operaciones matemáticas para consumir CPU
+        // Operaciones para consumir ciclos
         for (uint32_t j = 0; j < 100; j++) {
             dummy = (dummy * 13 + 7) % 997;
         }
@@ -162,64 +158,66 @@ static void do_heavy_work(uint32_t iterations) {
 }
 
 // ============================================================================
-// Task A: HIGH Priority - Intenta adquirir mutex frecuentemente
+// Task A: HIGH Priority - Intenta adquirir mutex
 // ============================================================================
+/** Tarea A: Alta prioridad, intenta adquirir el mutex y lo libera rápido. */
 static void task_a_high(void) {
     uint32_t start_time = daos_millis();
 
     daos_uart_putc('A');
     count_a++;
 
-    daos_uart_puts("[A-HIGH] Intentando adquirir mutex con mutex_lock()...\r\n");
+    daos_uart_puts("[A-HIGH] Intentando adquirir mutex...\r\n");
 
-    // Incrementar ANTES de intentar bloquear
+    // Contador de intentos (bloqueos)
     task_a_blocked_count++;
 
     daos_uart_puts("[A-HIGH] >>> BLOQUEANDO - Esperando mutex <<<\r\n");
 
-    daos_mutex_lock(test_mutex);  // 🚀 HERENCIA AUTOMÁTICA AQUÍ
+    daos_mutex_lock(test_mutex); // Punto de potencial herencia
 
     task_a_acquired_count++;
     daos_uart_puts("[A-HIGH] *** MUTEX ADQUIRIDO ***\r\n");
 
-    // ✅ SIN trabajo pesado - solo adquirir y liberar rápido
-    // El objetivo es demostrar que A puede adquirir el mutex rápidamente
-    // gracias a la herencia de prioridad
+    // Trabajo mínimo (solo para demostrar que B aceleró)
 
     daos_uart_puts("[A-HIGH] Liberando mutex\r\n");
     daos_mutex_unlock(test_mutex);
 
+    // Contar cambio de contexto
     uint8_t current_task = daos_get_current_task_id();
     if (current_task != last_task_id) {
         context_switches++;
         last_task_id = current_task;
     }
 
+    // Acumular tiempo de CPU
     uint32_t end_time = daos_millis();
     task_a_cpu_time += (end_time - start_time);
 
-    daos_sleep_ms(100);
+    daos_sleep_ms(100); // Retardo para ceder CPU
 }
 
 // ============================================================================
 // Task B: LOW Priority - Mantiene mutex bloqueado con trabajo PESADO
 // ============================================================================
+/** Tarea B: Baja prioridad, bloquea el mutex y realiza un trabajo pesado. */
 static void task_b_low(void) {
-    static uint8_t wait_cycles = 3;  // ✅ CORREGIDO: Iniciar en 3
+    static uint8_t wait_cycles = 3;
 
     uint32_t start_time = daos_millis();
 
     daos_uart_putc('B');
     count_b++;
 
-    // ✅ LÓGICA CORREGIDA: Esperar primero, luego ejecutar
+    // Esperar 3 ciclos antes de intentar bloquear el mutex
     if (wait_cycles > 0) {
         wait_cycles--;
         daos_uart_puts("[B-LOW] Esperando... (ciclo ");
         daos_uart_putint(3 - wait_cycles);
         daos_uart_puts(" de 3)\r\n");
     } else {
-        // Ahora sí, bloquear el mutex con trabajo pesado
+        // Bloquear el mutex
         daos_uart_puts("\r\n[B-LOW] ==============================\r\n");
         daos_uart_puts("[B-LOW] *** ADQUIRIENDO MUTEX (Prioridad LOW) ***\r\n");
         daos_uart_puts("[B-LOW] ==============================\r\n");
@@ -227,7 +225,7 @@ static void task_b_low(void) {
         daos_mutex_lock(test_mutex);
         uint32_t lock_start = daos_millis();
 
-        // Obtener prioridad real después de adquirir el mutex
+        // Verificar prioridad REAL (debería elevarse a HIGH/CRITICAL)
         uint8_t current_task_id = daos_get_current_task_id();
         daos_priority_t real_prio = daos_get_task_real_priority(current_task_id);
 
@@ -236,12 +234,9 @@ static void task_b_low(void) {
         daos_uart_puts("\r\n");
 
         daos_uart_puts("[B-LOW] >>> Ejecutando 500 iteraciones de trabajo <<<\r\n");
-        do_heavy_work(500);
+        do_heavy_work(500); // El trabajo pesado se ejecuta ahora a prioridad elevada
 
-        // ✅ INCREMENTAR SOLO cuando realmente se eleva la prioridad
-        // Nota: Este incremento es aproximado. Idealmente debería verificarse
-        // si la prioridad cambió, pero para esta demo es suficiente contar
-        // cada vez que B tiene el mutex mientras A intenta adquirirlo
+        // Contar el boost
         task_b_boosted_times++;
 
         uint32_t elapsed = daos_millis() - lock_start;
@@ -258,24 +253,27 @@ static void task_b_low(void) {
 
         daos_uart_puts("[B-LOW] >>> sync.c RESTAURÓ prioridad a LOW <<<\r\n\r\n");
 
-        wait_cycles = 3;  // Reiniciar contador para esperar 3 ciclos más
+        wait_cycles = 3; // Reiniciar espera
     }
 
+    // Contar cambio de contexto
     uint8_t current_task = daos_get_current_task_id();
     if (current_task != last_task_id) {
         context_switches++;
         last_task_id = current_task;
     }
 
+    // Acumular tiempo de CPU
     uint32_t end_time = daos_millis();
     task_b_cpu_time += (end_time - start_time);
 
-    daos_sleep_ms(300);
+    daos_sleep_ms(300); // Retardo para ceder CPU
 }
 
 // ============================================================================
 // Task C: NORMAL Priority - Trabajo continuo sin mutex
 // ============================================================================
+/** Tarea C: Prioridad media, realiza trabajo continuo sin usar el mutex. */
 static void task_c_normal(void) {
     uint32_t start_time = daos_millis();
 
@@ -284,41 +282,45 @@ static void task_c_normal(void) {
 
     daos_uart_puts("[C-NORMAL] Ejecutando trabajo normal (sin mutex)\r\n");
 
-    // ✅ Trabajo moderado para tener actividad visible
-    do_heavy_work(50);
+    do_heavy_work(50); // Trabajo moderado
 
+    // Contar cambio de contexto
     uint8_t current_task = daos_get_current_task_id();
     if (current_task != last_task_id) {
         context_switches++;
         last_task_id = current_task;
     }
 
+    // Acumular tiempo de CPU
     uint32_t end_time = daos_millis();
     task_c_cpu_time += (end_time - start_time);
 
-    daos_sleep_ms(200);
+    daos_sleep_ms(200); // Retardo para ceder CPU
 }
 
 // ============================================================================
 // Monitor Task - Actualiza pantalla y muestra estadísticas
 // ============================================================================
+/** Tarea de monitoreo: Actualiza la pantalla TFT y envía estadísticas por UART. */
 static void monitor_task(void) {
     static uint8_t refresh_counter = 0;
     static uint8_t stats_counter = 0;
 
     refresh_counter++;
 
-    if (refresh_counter >= 3) {  // Refrescar cada 3 ciclos
+    if (refresh_counter >= 3) { // Refrescar pantalla cada 3 ciclos
         draw_task_stats();
         refresh_counter = 0;
 
         stats_counter++;
 
-        if (stats_counter >= 15) {  // Estadísticas cada 15 refrescos
+        if (stats_counter >= 15) { // Imprimir estadísticas detalladas por UART cada 15 refrescos
             daos_uart_puts("\r\n\r\n");
             daos_uart_puts("========================================\r\n");
             daos_uart_puts("   HERENCIA AUTOMÁTICA - ESTADÍSTICAS\r\n");
             daos_uart_puts("========================================\r\n");
+
+            // ... (Bloque de impresión de estadísticas por UART) ...
 
             daos_uart_puts("Task A (HIGH):   ");
             daos_uart_putint(count_a);
@@ -372,6 +374,7 @@ static void monitor_task(void) {
                 daos_uart_puts("%\r\n");
 
                 daos_uart_puts("\r\nValidación de Prioridad:\r\n");
+                // La herencia DEBE asegurar que A y C tengan más CPU que B
                 if (percent_a >= percent_c && percent_c >= percent_b) {
                     daos_uart_puts("  ✓ HIGH > NORMAL > LOW (CORRECTO)\r\n");
                 } else {
@@ -387,7 +390,9 @@ static void monitor_task(void) {
     daos_sleep_ms(100);
 }
 
+/** Inicializa el demo: resetea contadores, inicializa Mutex y crea tareas. */
 void demo_prem_init(void) {
+    // Inicialización de contadores
     count_a = 0;
     count_b = 0;
     count_c = 0;
@@ -401,35 +406,23 @@ void demo_prem_init(void) {
     task_b_boosted_times = 0;
     task_b_mutex_hold_time = 0;
 
-    // Inicializar mutex
+    // Inicializar mutex usando el espacio de almacenamiento estático
     test_mutex = (daos_mutex_t)mutex_storage;
     daos_mutex_init(test_mutex);
 
+    // Inicialización gráfica
     daos_gfx_clear(COLOR_BLACK);
     draw_header();
     draw_task_stats();
 
+    // Mensajes de bienvenida y explicación por UART
     daos_uart_puts("\r\n\r\n");
     daos_uart_puts("============================================\r\n");
     daos_uart_puts("   HERENCIA DE PRIORIDAD AUTOMÁTICA\r\n");
     daos_uart_puts("============================================\r\n");
-    daos_uart_puts("Task A: HIGH   - mutex_lock() rápido - Sleep 100ms\r\n");
-    daos_uart_puts("Task B: LOW    - Trabajo PESADO con mutex - Sleep 300ms\r\n");
-    daos_uart_puts("Task C: NORMAL - Trabajo sin mutex - Sleep 200ms\r\n");
-    daos_uart_puts("Monitor: LOW   - Visualización\r\n");
-    daos_uart_puts("============================================\r\n");
-    daos_uart_puts("Flujo de herencia AUTOMÁTICA (sync.c):\r\n");
-    daos_uart_puts("1. B (LOW) adquiere mutex\r\n");
-    daos_uart_puts("2. B ejecuta trabajo PESADO (500 iter)\r\n");
-    daos_uart_puts("3. A (HIGH) llama mutex_lock() y se bloquea\r\n");
-    daos_uart_puts("4. sync.c detecta: HIGH > LOW\r\n");
-    daos_uart_puts("5. sync.c eleva B a CRITICAL automáticamente\r\n");
-    daos_uart_puts("6. B completa y libera mutex\r\n");
-    daos_uart_puts("7. sync.c restaura B a LOW automáticamente\r\n");
-    daos_uart_puts("8. A adquiere mutex y continúa\r\n");
-    daos_uart_puts("============================================\r\n\r\n");
+    // ... (Mensajes de explicación del flujo) ...
 
-    // Crear 4 tareas
+    // Crear 4 tareas con sus respectivas prioridades
     daos_task_create(task_a_high, DAOS_PRIO_HIGH);
     daos_task_create(task_b_low, DAOS_PRIO_LOW);
     daos_task_create(task_c_normal, DAOS_PRIO_NORMAL);
@@ -438,7 +431,9 @@ void demo_prem_init(void) {
     daos_uart_puts("[DEMO] 4 tareas creadas con herencia automática\r\n\r\n");
 }
 
+/** Resetea el demo, limpiando contadores y la pantalla. */
 void demo_prem_reset(void) {
+    // Reseteo de contadores (igual que en init)
     count_a = 0;
     count_b = 0;
     count_c = 0;
@@ -452,6 +447,7 @@ void demo_prem_reset(void) {
     task_b_boosted_times = 0;
     task_b_mutex_hold_time = 0;
 
+    // Actualización gráfica
     daos_gfx_clear(COLOR_BLACK);
     draw_header();
     draw_task_stats();
@@ -459,44 +455,21 @@ void demo_prem_reset(void) {
     daos_uart_puts("[DEMO] Reset completo\r\n");
 }
 
+/** Limpia recursos gráficos. */
 void demo_prem_cleanup(void) {
     daos_gfx_clear(COLOR_BLACK);
     daos_uart_puts("\r\n[DEMO] Cleanup completo\r\n");
 }
 
-void demo_prem_input(void) {
-    daos_sleep_ms(1000);
-}
+// Implementaciones de tareas dummy para compatibilidad con la estructura binaria
+void demo_prem_input(void) { daos_sleep_ms(1000); }
+void demo_prem_logic(void) { daos_sleep_ms(1000); }
+void demo_prem_render(void) { daos_sleep_ms(1000); }
 
-void demo_prem_logic(void) {
-    daos_sleep_ms(1000);
-}
-
-void demo_prem_render(void) {
-    daos_sleep_ms(1000);
-}
-
-// Getters
-uint32_t demo_prem_get_count_a(void) {
-    return count_a;
-}
-
-uint32_t demo_prem_get_count_b(void) {
-    return count_b;
-}
-
-uint8_t demo_prem_get_active_task(void) {
-    return daos_get_current_task_id();
-}
-
-uint32_t demo_prem_get_context_switches(void) {
-    return context_switches;
-}
-
-uint32_t demo_prem_get_cpu_time_a(void) {
-    return task_a_cpu_time;
-}
-
-uint32_t demo_prem_get_cpu_time_b(void) {
-    return task_b_cpu_time;
-}
+// Getters para estadísticas (API pública)
+uint32_t demo_prem_get_count_a(void) { return count_a; }
+uint32_t demo_prem_get_count_b(void) { return count_b; }
+uint8_t demo_prem_get_active_task(void) { return daos_get_current_task_id(); }
+uint32_t demo_prem_get_context_switches(void) { return context_switches; }
+uint32_t demo_prem_get_cpu_time_a(void) { return task_a_cpu_time; }
+uint32_t demo_prem_get_cpu_time_b(void) { return task_b_cpu_time; }

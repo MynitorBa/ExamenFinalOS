@@ -79,6 +79,7 @@ Discarded input sections
  .group         0x00000000        0xc ./Src/aleatorio.o
  .group         0x00000000        0xc ./Src/aleatorio.o
  .group         0x00000000        0xc ./Src/aleatorio.o
+ .group         0x00000000        0xc ./Src/aleatorio.o
  .text          0x00000000        0x0 ./Src/aleatorio.o
  .data          0x00000000        0x0 ./Src/aleatorio.o
  .bss           0x00000000        0x0 ./Src/aleatorio.o
@@ -213,6 +214,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./Src/api.o
  .debug_macro   0x00000000       0x6a ./Src/api.o
  .debug_macro   0x00000000      0x1df ./Src/api.o
+ .debug_macro   0x00000000      0x190 ./Src/api.o
  .debug_macro   0x00000000       0x10 ./Src/api.o
  .group         0x00000000        0xc ./Src/binario.o
  .group         0x00000000        0xc ./Src/binario.o
@@ -254,7 +256,7 @@ Discarded input sections
                 0x00000000       0xb4 ./Src/binario.o
  .text.binario_detener
                 0x00000000       0x50 ./Src/binario.o
- .debug_info    0x00000000      0x339 ./Src/binario.o
+ .debug_info    0x00000000      0x33a ./Src/binario.o
  .debug_abbrev  0x00000000      0x17c ./Src/binario.o
  .debug_aranges
                 0x00000000       0x40 ./Src/binario.o
@@ -270,7 +272,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x1df ./Src/binario.o
  .debug_macro   0x00000000       0x10 ./Src/binario.o
  .debug_macro   0x00000000      0x190 ./Src/binario.o
- .debug_macro   0x00000000       0x72 ./Src/binario.o
+ .debug_macro   0x00000000       0x82 ./Src/binario.o
  .debug_macro   0x00000000       0x61 ./Src/binario.o
  .debug_macro   0x00000000       0x2a ./Src/binario.o
  .debug_macro   0x00000000       0x43 ./Src/binario.o
@@ -287,7 +289,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./Src/binario.o
  .debug_macro   0x00000000       0x3c ./Src/binario.o
  .debug_macro   0x00000000       0x20 ./Src/binario.o
- .debug_line    0x00000000      0x6a8 ./Src/binario.o
+ .debug_line    0x00000000      0x6ac ./Src/binario.o
  .debug_str     0x00000000     0x76c2 ./Src/binario.o
  .comment       0x00000000       0x44 ./Src/binario.o
  .debug_frame   0x00000000       0xc8 ./Src/binario.o
@@ -353,12 +355,13 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./Src/buzzer.o
  .debug_macro   0x00000000       0x6a ./Src/buzzer.o
  .debug_macro   0x00000000      0x1df ./Src/buzzer.o
- .debug_line    0x00000000      0x693 ./Src/buzzer.o
+ .debug_line    0x00000000      0x694 ./Src/buzzer.o
  .debug_str     0x00000000     0x4275 ./Src/buzzer.o
  .comment       0x00000000       0x44 ./Src/buzzer.o
  .debug_frame   0x00000000       0x9c ./Src/buzzer.o
  .ARM.attributes
                 0x00000000       0x34 ./Src/buzzer.o
+ .group         0x00000000        0xc ./Src/context.o
  .group         0x00000000        0xc ./Src/context.o
  .group         0x00000000        0xc ./Src/context.o
  .group         0x00000000        0xc ./Src/context.o
@@ -392,6 +395,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./Src/context.o
  .debug_macro   0x00000000       0x6a ./Src/context.o
  .debug_macro   0x00000000      0x1df ./Src/context.o
+ .debug_macro   0x00000000      0x190 ./Src/context.o
  .group         0x00000000        0xc ./Src/demo_prem.o
  .group         0x00000000        0xc ./Src/demo_prem.o
  .group         0x00000000        0xc ./Src/demo_prem.o
@@ -424,7 +428,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/demo_prem.o
  .debug_macro   0x00000000      0x1df ./Src/demo_prem.o
  .debug_macro   0x00000000      0x190 ./Src/demo_prem.o
- .debug_macro   0x00000000       0x72 ./Src/demo_prem.o
+ .debug_macro   0x00000000       0x82 ./Src/demo_prem.o
  .group         0x00000000        0xc ./Src/demo_scheduler_rr.o
  .group         0x00000000        0xc ./Src/demo_scheduler_rr.o
  .group         0x00000000        0xc ./Src/demo_scheduler_rr.o
@@ -467,7 +471,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/demo_scheduler_rr.o
  .debug_macro   0x00000000      0x1df ./Src/demo_scheduler_rr.o
  .debug_macro   0x00000000      0x190 ./Src/demo_scheduler_rr.o
- .debug_macro   0x00000000       0x72 ./Src/demo_scheduler_rr.o
+ .debug_macro   0x00000000       0x82 ./Src/demo_scheduler_rr.o
  .group         0x00000000        0xc ./Src/disco.o
  .group         0x00000000        0xc ./Src/disco.o
  .group         0x00000000        0xc ./Src/disco.o
@@ -494,7 +498,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/disco.o
  .debug_macro   0x00000000      0x1df ./Src/disco.o
  .debug_macro   0x00000000      0x190 ./Src/disco.o
- .debug_macro   0x00000000       0x72 ./Src/disco.o
+ .debug_macro   0x00000000       0x82 ./Src/disco.o
  .group         0x00000000        0xc ./Src/fat.o
  .group         0x00000000        0xc ./Src/fat.o
  .group         0x00000000        0xc ./Src/fat.o
@@ -698,7 +702,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/herenciaprioridad.o
  .debug_macro   0x00000000      0x1df ./Src/herenciaprioridad.o
  .debug_macro   0x00000000      0x190 ./Src/herenciaprioridad.o
- .debug_macro   0x00000000       0x72 ./Src/herenciaprioridad.o
+ .debug_macro   0x00000000       0x82 ./Src/herenciaprioridad.o
  .group         0x00000000        0xc ./Src/loader.o
  .group         0x00000000        0xc ./Src/loader.o
  .group         0x00000000        0xc ./Src/loader.o
@@ -797,7 +801,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/main.o
  .debug_macro   0x00000000      0x1df ./Src/main.o
  .debug_macro   0x00000000      0x190 ./Src/main.o
- .debug_macro   0x00000000       0x72 ./Src/main.o
+ .debug_macro   0x00000000       0x82 ./Src/main.o
  .debug_macro   0x00000000       0x61 ./Src/main.o
  .debug_macro   0x00000000       0x2a ./Src/main.o
  .debug_macro   0x00000000       0x43 ./Src/main.o
@@ -920,7 +924,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/reconocedor.o
  .debug_macro   0x00000000      0x1df ./Src/reconocedor.o
  .debug_macro   0x00000000      0x190 ./Src/reconocedor.o
- .debug_macro   0x00000000       0x72 ./Src/reconocedor.o
+ .debug_macro   0x00000000       0x82 ./Src/reconocedor.o
  .group         0x00000000        0xc ./Src/sched.o
  .group         0x00000000        0xc ./Src/sched.o
  .group         0x00000000        0xc ./Src/sched.o
@@ -983,7 +987,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x1df ./Src/shell.o
  .debug_macro   0x00000000       0x1c ./Src/shell.o
  .debug_macro   0x00000000      0x190 ./Src/shell.o
- .debug_macro   0x00000000       0x72 ./Src/shell.o
+ .debug_macro   0x00000000       0x82 ./Src/shell.o
  .debug_macro   0x00000000       0x61 ./Src/shell.o
  .debug_macro   0x00000000       0x2a ./Src/shell.o
  .debug_macro   0x00000000       0x43 ./Src/shell.o
@@ -1038,7 +1042,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/snake.o
  .debug_macro   0x00000000      0x1df ./Src/snake.o
  .debug_macro   0x00000000      0x190 ./Src/snake.o
- .debug_macro   0x00000000       0x72 ./Src/snake.o
+ .debug_macro   0x00000000       0x82 ./Src/snake.o
  .debug_macro   0x00000000       0x61 ./Src/snake.o
  .debug_macro   0x00000000       0x2a ./Src/snake.o
  .debug_macro   0x00000000       0x43 ./Src/snake.o
@@ -1314,7 +1318,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/tanque.o
  .debug_macro   0x00000000      0x1df ./Src/tanque.o
  .debug_macro   0x00000000      0x190 ./Src/tanque.o
- .debug_macro   0x00000000       0x72 ./Src/tanque.o
+ .debug_macro   0x00000000       0x82 ./Src/tanque.o
  .group         0x00000000        0xc ./Src/tron.o
  .group         0x00000000        0xc ./Src/tron.o
  .group         0x00000000        0xc ./Src/tron.o
@@ -1347,7 +1351,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/tron.o
  .debug_macro   0x00000000      0x1df ./Src/tron.o
  .debug_macro   0x00000000      0x190 ./Src/tron.o
- .debug_macro   0x00000000       0x72 ./Src/tron.o
+ .debug_macro   0x00000000       0x82 ./Src/tron.o
  .group         0x00000000        0xc ./Src/tron2.o
  .group         0x00000000        0xc ./Src/tron2.o
  .group         0x00000000        0xc ./Src/tron2.o
@@ -1376,7 +1380,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/tron2.o
  .debug_macro   0x00000000      0x1df ./Src/tron2.o
  .debug_macro   0x00000000      0x190 ./Src/tron2.o
- .debug_macro   0x00000000       0x72 ./Src/tron2.o
+ .debug_macro   0x00000000       0x82 ./Src/tron2.o
  .group         0x00000000        0xc ./Src/troncancion.o
  .text          0x00000000        0x0 ./Src/troncancion.o
  .data          0x00000000        0x0 ./Src/troncancion.o
@@ -1431,7 +1435,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/user_apps.o
  .debug_macro   0x00000000      0x1df ./Src/user_apps.o
  .debug_macro   0x00000000      0x190 ./Src/user_apps.o
- .debug_macro   0x00000000       0x72 ./Src/user_apps.o
+ .debug_macro   0x00000000       0x82 ./Src/user_apps.o
  .text          0x00000000       0x14 ./Startup/startup_stm32f446retx.o
  .data          0x00000000        0x0 ./Startup/startup_stm32f446retx.o
  .bss           0x00000000        0x0 ./Startup/startup_stm32f446retx.o
@@ -1762,7 +1766,7 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x08000000                g_pfnVectors
                 0x080001c4                        . = ALIGN (0x4)
 
-.text           0x080001c4    0x13260
+.text           0x080001c4    0x12da4
                 0x080001c4                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001c4       0x40 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -1999,856 +2003,856 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .text.monitor_task
                 0x08001b84      0x294 ./Src/demo_prem.o
  .text.demo_prem_init
-                0x08001e18      0x198 ./Src/demo_prem.o
+                0x08001e18      0x104 ./Src/demo_prem.o
                 0x08001e18                demo_prem_init
  .text.demo_prem_reset
-                0x08001fb0       0x98 ./Src/demo_prem.o
-                0x08001fb0                demo_prem_reset
+                0x08001f1c       0x98 ./Src/demo_prem.o
+                0x08001f1c                demo_prem_reset
  .text.demo_prem_cleanup
-                0x08002048       0x18 ./Src/demo_prem.o
-                0x08002048                demo_prem_cleanup
+                0x08001fb4       0x18 ./Src/demo_prem.o
+                0x08001fb4                demo_prem_cleanup
  .text.demo_prem_input
-                0x08002060       0x10 ./Src/demo_prem.o
-                0x08002060                demo_prem_input
+                0x08001fcc       0x10 ./Src/demo_prem.o
+                0x08001fcc                demo_prem_input
  .text.demo_prem_logic
-                0x08002070       0x10 ./Src/demo_prem.o
-                0x08002070                demo_prem_logic
+                0x08001fdc       0x10 ./Src/demo_prem.o
+                0x08001fdc                demo_prem_logic
  .text.demo_prem_render
-                0x08002080       0x10 ./Src/demo_prem.o
-                0x08002080                demo_prem_render
+                0x08001fec       0x10 ./Src/demo_prem.o
+                0x08001fec                demo_prem_render
  .text.uint32_to_str
-                0x08002090       0xec ./Src/demo_scheduler_rr.o
+                0x08001ffc       0xec ./Src/demo_scheduler_rr.o
  .text.draw_header
-                0x0800217c       0x28 ./Src/demo_scheduler_rr.o
+                0x080020e8       0x28 ./Src/demo_scheduler_rr.o
  .text.draw_task_stats
-                0x080021a4      0x504 ./Src/demo_scheduler_rr.o
+                0x08002110      0x39c ./Src/demo_scheduler_rr.o
  .text.task_a_critical
-                0x080026a8       0x74 ./Src/demo_scheduler_rr.o
+                0x080024ac       0x74 ./Src/demo_scheduler_rr.o
  .text.task_b_normal
-                0x0800271c       0x74 ./Src/demo_scheduler_rr.o
+                0x08002520       0x74 ./Src/demo_scheduler_rr.o
  .text.task_c_normal
-                0x08002790       0x74 ./Src/demo_scheduler_rr.o
+                0x08002594       0x74 ./Src/demo_scheduler_rr.o
  .text.task_d_low
-                0x08002804       0x74 ./Src/demo_scheduler_rr.o
+                0x08002608       0x74 ./Src/demo_scheduler_rr.o
  .text.monitor_task
-                0x08002878      0x2d8 ./Src/demo_scheduler_rr.o
+                0x0800267c       0xb4 ./Src/demo_scheduler_rr.o
  .text.demo_scheduler_rr_init
-                0x08002b50      0x180 ./Src/demo_scheduler_rr.o
-                0x08002b50                demo_scheduler_rr_init
+                0x08002730       0xe4 ./Src/demo_scheduler_rr.o
+                0x08002730                demo_scheduler_rr_init
  .text.demo_scheduler_rr_cleanup
-                0x08002cd0       0x7c ./Src/demo_scheduler_rr.o
-                0x08002cd0                demo_scheduler_rr_cleanup
+                0x08002814       0x7c ./Src/demo_scheduler_rr.o
+                0x08002814                demo_scheduler_rr_cleanup
  .text.demo_scheduler_rr_input
-                0x08002d4c       0x10 ./Src/demo_scheduler_rr.o
-                0x08002d4c                demo_scheduler_rr_input
+                0x08002890       0x10 ./Src/demo_scheduler_rr.o
+                0x08002890                demo_scheduler_rr_input
  .text.demo_scheduler_rr_logic
-                0x08002d5c       0x10 ./Src/demo_scheduler_rr.o
-                0x08002d5c                demo_scheduler_rr_logic
+                0x080028a0       0x10 ./Src/demo_scheduler_rr.o
+                0x080028a0                demo_scheduler_rr_logic
  .text.demo_scheduler_rr_render
-                0x08002d6c       0x10 ./Src/demo_scheduler_rr.o
-                0x08002d6c                demo_scheduler_rr_render
+                0x080028b0       0x10 ./Src/demo_scheduler_rr.o
+                0x080028b0                demo_scheduler_rr_render
  .text.integer_to_string
-                0x08002d7c       0xbc ./Src/disco.o
+                0x080028c0       0xbc ./Src/disco.o
  .text.get_simulated_time
-                0x08002e38       0x18 ./Src/disco.o
+                0x0800297c       0x18 ./Src/disco.o
  .text.draw_sprite_at
-                0x08002e50      0x104 ./Src/disco.o
+                0x08002994      0x104 ./Src/disco.o
  .text.draw_platform
-                0x08002f54      0x108 ./Src/disco.o
+                0x08002a98      0x108 ./Src/disco.o
  .text.erase_player_at
-                0x0800305c      0x2f8 ./Src/disco.o
+                0x08002ba0      0x2f8 ./Src/disco.o
  .text.draw_time_ball
-                0x08003354       0x2a ./Src/disco.o
- *fill*         0x0800337e        0x2 
+                0x08002e98       0x2a ./Src/disco.o
+ *fill*         0x08002ec2        0x2 
  .text.check_and_show_victory
-                0x08003380      0x31c ./Src/disco.o
+                0x08002ec4      0x31c ./Src/disco.o
  .text.disco_input_task
-                0x0800369c      0x648 ./Src/disco.o
-                0x0800369c                disco_input_task
+                0x080031e0      0x648 ./Src/disco.o
+                0x080031e0                disco_input_task
  .text.disco_logic_task
-                0x08003ce4      0x598 ./Src/disco.o
-                0x08003ce4                disco_logic_task
+                0x08003828      0x598 ./Src/disco.o
+                0x08003828                disco_logic_task
  .text.disco_render_task
-                0x0800427c      0xb80 ./Src/disco.o
-                0x0800427c                disco_render_task
+                0x08003dc0      0xb80 ./Src/disco.o
+                0x08003dc0                disco_render_task
  .text.disco_init
-                0x08004dfc      0x3d4 ./Src/disco.o
-                0x08004dfc                disco_init
+                0x08004940      0x3d4 ./Src/disco.o
+                0x08004940                disco_init
  .text.disco_cleanup
-                0x080051d0       0x28 ./Src/disco.o
-                0x080051d0                disco_cleanup
- .text.fs_init  0x080051f8       0xb0 ./Src/fs.o
-                0x080051f8                fs_init
+                0x08004d14       0x28 ./Src/disco.o
+                0x08004d14                disco_cleanup
+ .text.fs_init  0x08004d3c       0xb0 ./Src/fs.o
+                0x08004d3c                fs_init
  .text.uint32_to_str
-                0x080052a8       0xec ./Src/herenciaprioridad.o
+                0x08004dec       0xec ./Src/herenciaprioridad.o
  .text.draw_header
-                0x08005394       0x28 ./Src/herenciaprioridad.o
+                0x08004ed8       0x28 ./Src/herenciaprioridad.o
  .text.draw_stats
-                0x080053bc      0x188 ./Src/herenciaprioridad.o
+                0x08004f00      0x188 ./Src/herenciaprioridad.o
  .text.do_heavy_work
-                0x08005544       0x94 ./Src/herenciaprioridad.o
- .text.task_a   0x080055d8      0x104 ./Src/herenciaprioridad.o
- .text.task_b   0x080056dc      0x230 ./Src/herenciaprioridad.o
+                0x08005088       0x94 ./Src/herenciaprioridad.o
+ .text.task_a   0x0800511c      0x104 ./Src/herenciaprioridad.o
+ .text.task_b   0x08005220      0x230 ./Src/herenciaprioridad.o
  .text.monitor_task
-                0x0800590c      0x110 ./Src/herenciaprioridad.o
+                0x08005450      0x110 ./Src/herenciaprioridad.o
  .text.herenciaprioridad_init
-                0x08005a1c      0x124 ./Src/herenciaprioridad.o
-                0x08005a1c                herenciaprioridad_init
+                0x08005560      0x124 ./Src/herenciaprioridad.o
+                0x08005560                herenciaprioridad_init
  .text.herenciaprioridad_reset
-                0x08005b40       0x80 ./Src/herenciaprioridad.o
-                0x08005b40                herenciaprioridad_reset
+                0x08005684       0x80 ./Src/herenciaprioridad.o
+                0x08005684                herenciaprioridad_reset
  .text.herenciaprioridad_cleanup
-                0x08005bc0       0x18 ./Src/herenciaprioridad.o
-                0x08005bc0                herenciaprioridad_cleanup
+                0x08005704       0x18 ./Src/herenciaprioridad.o
+                0x08005704                herenciaprioridad_cleanup
  .text.herenciaprioridad_input_task
-                0x08005bd8       0x10 ./Src/herenciaprioridad.o
-                0x08005bd8                herenciaprioridad_input_task
+                0x0800571c       0x10 ./Src/herenciaprioridad.o
+                0x0800571c                herenciaprioridad_input_task
  .text.herenciaprioridad_logic_task
-                0x08005be8       0x10 ./Src/herenciaprioridad.o
-                0x08005be8                herenciaprioridad_logic_task
+                0x0800572c       0x10 ./Src/herenciaprioridad.o
+                0x0800572c                herenciaprioridad_logic_task
  .text.herenciaprioridad_render_task
-                0x08005bf8       0x10 ./Src/herenciaprioridad.o
-                0x08005bf8                herenciaprioridad_render_task
+                0x0800573c       0x10 ./Src/herenciaprioridad.o
+                0x0800573c                herenciaprioridad_render_task
  .text.herenciaprioridad_get_binario
-                0x08005c08       0x10 ./Src/herenciaprioridad.o
-                0x08005c08                herenciaprioridad_get_binario
+                0x0800574c       0x10 ./Src/herenciaprioridad.o
+                0x0800574c                herenciaprioridad_get_binario
  .text.loader_list_apps
-                0x08005c18       0x90 ./Src/loader.o
-                0x08005c18                loader_list_apps
+                0x0800575c       0x90 ./Src/loader.o
+                0x0800575c                loader_list_apps
  .text.loader_exec
-                0x08005ca8       0xa8 ./Src/loader.o
-                0x08005ca8                loader_exec
+                0x080057ec       0xa8 ./Src/loader.o
+                0x080057ec                loader_exec
  .text.loader_get_app_count
-                0x08005d50       0x10 ./Src/loader.o
-                0x08005d50                loader_get_app_count
+                0x08005894       0x10 ./Src/loader.o
+                0x08005894                loader_get_app_count
  .text.daos_cleanup_current_game
-                0x08005d60       0x28 ./Src/main.o
-                0x08005d60                daos_cleanup_current_game
+                0x080058a4       0x28 ./Src/main.o
+                0x080058a4                daos_cleanup_current_game
  .text.system_monitor
-                0x08005d88       0xbc ./Src/main.o
-                0x08005d88                system_monitor
+                0x080058cc       0xbc ./Src/main.o
+                0x080058cc                system_monitor
  .text.button_update_task
-                0x08005e44      0x1d8 ./Src/main.o
-                0x08005e44                button_update_task
+                0x08005988      0x1d8 ./Src/main.o
+                0x08005988                button_update_task
  .text.draw_frame
-                0x0800601c       0x76 ./Src/main.o
-                0x0800601c                draw_frame
- *fill*         0x08006092        0x2 
+                0x08005b60       0x76 ./Src/main.o
+                0x08005b60                draw_frame
+ *fill*         0x08005bd6        0x2 
  .text.draw_menu_option
-                0x08006094      0x11c ./Src/main.o
-                0x08006094                draw_menu_option
+                0x08005bd8      0x11c ./Src/main.o
+                0x08005bd8                draw_menu_option
  .text.show_boot_animation
-                0x080061b0       0xdc ./Src/main.o
-                0x080061b0                show_boot_animation
+                0x08005cf4       0xdc ./Src/main.o
+                0x08005cf4                show_boot_animation
  .text.show_game_banner
-                0x0800628c      0x138 ./Src/main.o
-                0x0800628c                show_game_banner
+                0x08005dd0      0x138 ./Src/main.o
+                0x08005dd0                show_game_banner
  .text.wait_for_game_start
-                0x080063c4       0xb4 ./Src/main.o
-                0x080063c4                wait_for_game_start
+                0x08005f08       0xb4 ./Src/main.o
+                0x08005f08                wait_for_game_start
  .text.shell_lcd_display_task
-                0x08006478       0xa4 ./Src/main.o
-                0x08006478                shell_lcd_display_task
- .text.main     0x0800651c      0xf10 ./Src/main.o
-                0x0800651c                main
+                0x08005fbc       0xa4 ./Src/main.o
+                0x08005fbc                shell_lcd_display_task
+ .text.main     0x08006060      0xf10 ./Src/main.o
+                0x08006060                main
  .text.delay_ms
-                0x0800742c       0x32 ./Src/pantalla.o
- *fill*         0x0800745e        0x2 
+                0x08006f70       0x32 ./Src/pantalla.o
+ *fill*         0x08006fa2        0x2 
  .text.spi_write
-                0x08007460       0x44 ./Src/pantalla.o
- .text.lcd_cmd  0x080074a4       0x38 ./Src/pantalla.o
+                0x08006fa4       0x44 ./Src/pantalla.o
+ .text.lcd_cmd  0x08006fe8       0x38 ./Src/pantalla.o
  .text.lcd_data
-                0x080074dc       0x38 ./Src/pantalla.o
+                0x08007020       0x38 ./Src/pantalla.o
  .text.get_font_index
-                0x08007514       0x64 ./Src/pantalla.o
+                0x08007058       0x64 ./Src/pantalla.o
  .text.pantalla_init
-                0x08007578      0x13c ./Src/pantalla.o
-                0x08007578                pantalla_init
+                0x080070bc      0x13c ./Src/pantalla.o
+                0x080070bc                pantalla_init
  .text.pantalla_set_window
-                0x080076b4       0x98 ./Src/pantalla.o
-                0x080076b4                pantalla_set_window
+                0x080071f8       0x98 ./Src/pantalla.o
+                0x080071f8                pantalla_set_window
  .text.pantalla_clear
-                0x0800774c       0x24 ./Src/pantalla.o
-                0x0800774c                pantalla_clear
+                0x08007290       0x24 ./Src/pantalla.o
+                0x08007290                pantalla_clear
  .text.pantalla_draw_pixel
-                0x08007770       0x6c ./Src/pantalla.o
-                0x08007770                pantalla_draw_pixel
+                0x080072b4       0x6c ./Src/pantalla.o
+                0x080072b4                pantalla_draw_pixel
  .text.pantalla_fill_rect
-                0x080077dc       0xd0 ./Src/pantalla.o
-                0x080077dc                pantalla_fill_rect
+                0x08007320       0xd0 ./Src/pantalla.o
+                0x08007320                pantalla_fill_rect
  .text.pantalla_draw_circle_filled
-                0x080078ac       0xa6 ./Src/pantalla.o
-                0x080078ac                pantalla_draw_circle_filled
- *fill*         0x08007952        0x2 
+                0x080073f0       0xa6 ./Src/pantalla.o
+                0x080073f0                pantalla_draw_circle_filled
+ *fill*         0x08007496        0x2 
  .text.pantalla_draw_char
-                0x08007954       0xc0 ./Src/pantalla.o
-                0x08007954                pantalla_draw_char
+                0x08007498       0xc0 ./Src/pantalla.o
+                0x08007498                pantalla_draw_char
  .text.pantalla_draw_string
-                0x08007a14       0x4e ./Src/pantalla.o
-                0x08007a14                pantalla_draw_string
- *fill*         0x08007a62        0x2 
+                0x08007558       0x4e ./Src/pantalla.o
+                0x08007558                pantalla_draw_string
+ *fill*         0x080075a6        0x2 
  .text.pantalla_draw_string_large
-                0x08007a64      0x148 ./Src/pantalla.o
-                0x08007a64                pantalla_draw_string_large
+                0x080075a8      0x148 ./Src/pantalla.o
+                0x080075a8                pantalla_draw_string_large
  .text.find_free_inode
-                0x08007bac       0x48 ./Src/ramfs.o
+                0x080076f0       0x48 ./Src/ramfs.o
  .text.find_inode_by_name
-                0x08007bf4       0x60 ./Src/ramfs.o
+                0x08007738       0x60 ./Src/ramfs.o
  .text.count_free_blocks_from
-                0x08007c54       0x44 ./Src/ramfs.o
+                0x08007798       0x44 ./Src/ramfs.o
  .text.find_free_blocks
-                0x08007c98       0x3e ./Src/ramfs.o
- *fill*         0x08007cd6        0x2 
+                0x080077dc       0x3e ./Src/ramfs.o
+ *fill*         0x0800781a        0x2 
  .text.mark_blocks_used
-                0x08007cd8       0x3c ./Src/ramfs.o
+                0x0800781c       0x3c ./Src/ramfs.o
  .text.free_blocks
-                0x08007d14       0x3c ./Src/ramfs.o
+                0x08007858       0x3c ./Src/ramfs.o
  .text.find_free_fd
-                0x08007d50       0x48 ./Src/ramfs.o
+                0x08007894       0x48 ./Src/ramfs.o
  .text.ramfs_open
-                0x08007d98      0x200 ./Src/ramfs.o
-                0x08007d98                ramfs_open
+                0x080078dc      0x200 ./Src/ramfs.o
+                0x080078dc                ramfs_open
  .text.ramfs_read
-                0x08007f98      0x16c ./Src/ramfs.o
-                0x08007f98                ramfs_read
+                0x08007adc      0x16c ./Src/ramfs.o
+                0x08007adc                ramfs_read
  .text.ramfs_write
-                0x08008104      0x218 ./Src/ramfs.o
-                0x08008104                ramfs_write
+                0x08007c48      0x218 ./Src/ramfs.o
+                0x08007c48                ramfs_write
  .text.ramfs_close
-                0x0800831c       0x94 ./Src/ramfs.o
-                0x0800831c                ramfs_close
+                0x08007e60       0x94 ./Src/ramfs.o
+                0x08007e60                ramfs_close
  .text.ramfs_create
-                0x080083b0       0x4c ./Src/ramfs.o
-                0x080083b0                ramfs_create
+                0x08007ef4       0x4c ./Src/ramfs.o
+                0x08007ef4                ramfs_create
  .text.ramfs_delete
-                0x080083fc       0x80 ./Src/ramfs.o
-                0x080083fc                ramfs_delete
+                0x08007f40       0x80 ./Src/ramfs.o
+                0x08007f40                ramfs_delete
  .text.ramfs_exists
-                0x0800847c       0x1e ./Src/ramfs.o
-                0x0800847c                ramfs_exists
- *fill*         0x0800849a        0x2 
+                0x08007fc0       0x1e ./Src/ramfs.o
+                0x08007fc0                ramfs_exists
+ *fill*         0x08007fde        0x2 
  .text.ramfs_get_size
-                0x0800849c       0x3c ./Src/ramfs.o
-                0x0800849c                ramfs_get_size
+                0x08007fe0       0x3c ./Src/ramfs.o
+                0x08007fe0                ramfs_get_size
  .text.ramfs_listdir
-                0x080084d8       0xac ./Src/ramfs.o
-                0x080084d8                ramfs_listdir
+                0x0800801c       0xac ./Src/ramfs.o
+                0x0800801c                ramfs_listdir
  .text.ramfs_stats
-                0x08008584       0xa4 ./Src/ramfs.o
-                0x08008584                ramfs_stats
+                0x080080c8       0xa4 ./Src/ramfs.o
+                0x080080c8                ramfs_stats
  .text.ramfs_append
-                0x08008628       0x4c ./Src/ramfs.o
-                0x08008628                ramfs_append
+                0x0800816c       0x4c ./Src/ramfs.o
+                0x0800816c                ramfs_append
  .text.random_range
-                0x08008674       0x28 ./Src/reconocedor.o
+                0x080081b8       0x28 ./Src/reconocedor.o
  .text.es_valido
-                0x0800869c       0x44 ./Src/reconocedor.o
+                0x080081e0       0x44 ./Src/reconocedor.o
  .text.is_maniqui_at
-                0x080086e0       0x78 ./Src/reconocedor.o
+                0x08008224       0x78 ./Src/reconocedor.o
  .text.generar_laberinto_recursivo
-                0x08008758      0x1a4 ./Src/reconocedor.o
+                0x0800829c      0x1a4 ./Src/reconocedor.o
  .text.crear_area_central
-                0x080088fc       0x98 ./Src/reconocedor.o
+                0x08008440       0x98 ./Src/reconocedor.o
  .text.colocar_cajas
-                0x08008994      0x108 ./Src/reconocedor.o
+                0x080084d8      0x108 ./Src/reconocedor.o
  .text.colocar_raices
-                0x08008a9c       0xe4 ./Src/reconocedor.o
+                0x080085e0       0xe4 ./Src/reconocedor.o
  .text.generar_mapa_laberinto
-                0x08008b80      0x214 ./Src/reconocedor.o
+                0x080086c4      0x214 ./Src/reconocedor.o
  .text.draw_horizontal_line
-                0x08008d94       0x98 ./Src/reconocedor.o
+                0x080088d8       0x98 ./Src/reconocedor.o
  .text.draw_vertical_line
-                0x08008e2c       0x96 ./Src/reconocedor.o
+                0x08008970       0x96 ./Src/reconocedor.o
  .text.draw_tile
-                0x08008ec2      0x13e ./Src/reconocedor.o
+                0x08008a06      0x13e ./Src/reconocedor.o
  .text.draw_tile_rotated
-                0x08009000      0x1e4 ./Src/reconocedor.o
+                0x08008b44      0x1e4 ./Src/reconocedor.o
  .text.draw_tile_centro
-                0x080091e4       0x88 ./Src/reconocedor.o
+                0x08008d28       0x88 ./Src/reconocedor.o
  .text.draw_tile_raiz
-                0x0800926c       0x88 ./Src/reconocedor.o
+                0x08008db0       0x88 ./Src/reconocedor.o
  .text.redraw_tile_content
-                0x080092f4      0x104 ./Src/reconocedor.o
+                0x08008e38      0x104 ./Src/reconocedor.o
  .text.try_move_escondedor
-                0x080093f8      0x194 ./Src/reconocedor.o
+                0x08008f3c      0x194 ./Src/reconocedor.o
  .text.toggle_maniqui
-                0x0800958c      0x1ac ./Src/reconocedor.o
+                0x080090d0      0x1ac ./Src/reconocedor.o
  .text.init_ray_table_3d
-                0x08009738      0x208 ./Src/reconocedor.o
+                0x0800927c      0x208 ./Src/reconocedor.o
  .text.cast_ray_optimized
-                0x08009940      0x208 ./Src/reconocedor.o
+                0x08009484      0x208 ./Src/reconocedor.o
  .text.get_wall_color_fast_3d
-                0x08009b48      0x174 ./Src/reconocedor.o
+                0x0800968c      0x174 ./Src/reconocedor.o
  .text.render_3d_view
-                0x08009cbc      0x238 ./Src/reconocedor.o
+                0x08009800      0x238 ./Src/reconocedor.o
  .text.draw_minimap_3d
-                0x08009ef4      0x268 ./Src/reconocedor.o
+                0x08009a38      0x268 ./Src/reconocedor.o
  .text.draw_hud_3d
-                0x0800a15c      0x4d8 ./Src/reconocedor.o
+                0x08009ca0      0x4d8 ./Src/reconocedor.o
  .text.fase_2d_render
-                0x0800a634      0x274 ./Src/reconocedor.o
+                0x0800a178      0x274 ./Src/reconocedor.o
  .text.fase_3d_render
-                0x0800a8a8       0x34 ./Src/reconocedor.o
+                0x0800a3ec       0x34 ./Src/reconocedor.o
  .text.intentar_abrir_caja
-                0x0800a8dc      0x3bc ./Src/reconocedor.o
+                0x0800a420      0x3bc ./Src/reconocedor.o
  .text.reconocedor_input_task
-                0x0800ac98      0x7c0 ./Src/reconocedor.o
-                0x0800ac98                reconocedor_input_task
+                0x0800a7dc      0x7c0 ./Src/reconocedor.o
+                0x0800a7dc                reconocedor_input_task
  .text.reconocedor_logic_task
-                0x0800b458       0x20 ./Src/reconocedor.o
-                0x0800b458                reconocedor_logic_task
+                0x0800af9c       0x20 ./Src/reconocedor.o
+                0x0800af9c                reconocedor_logic_task
  .text.reconocedor_render_task
-                0x0800b478      0x448 ./Src/reconocedor.o
-                0x0800b478                reconocedor_render_task
+                0x0800afbc      0x448 ./Src/reconocedor.o
+                0x0800afbc                reconocedor_render_task
  .text.reconocedor_init
-                0x0800b8c0       0xe8 ./Src/reconocedor.o
-                0x0800b8c0                reconocedor_init
+                0x0800b404       0xe8 ./Src/reconocedor.o
+                0x0800b404                reconocedor_init
  .text.reconocedor_reset
-                0x0800b9a8        0xc ./Src/reconocedor.o
-                0x0800b9a8                reconocedor_reset
+                0x0800b4ec        0xc ./Src/reconocedor.o
+                0x0800b4ec                reconocedor_reset
  .text.reconocedor_cleanup
-                0x0800b9b4       0x18 ./Src/reconocedor.o
-                0x0800b9b4                reconocedor_cleanup
+                0x0800b4f8       0x18 ./Src/reconocedor.o
+                0x0800b4f8                reconocedor_cleanup
  .text.get_task_quantum
-                0x0800b9cc       0x50 ./Src/sched.o
+                0x0800b510       0x50 ./Src/sched.o
  .text.has_higher_priority_ready
-                0x0800ba1c       0x84 ./Src/sched.o
+                0x0800b560       0x84 ./Src/sched.o
  .text.find_highest_priority_ready
-                0x0800baa0      0x1c8 ./Src/sched.o
+                0x0800b5e4      0x1c8 ./Src/sched.o
  .text.apply_aging
-                0x0800bc68       0xd4 ./Src/sched.o
+                0x0800b7ac       0xd4 ./Src/sched.o
  .text.SysTick_Handler
-                0x0800bd3c      0x1b0 ./Src/sched.o
-                0x0800bd3c                SysTick_Handler
+                0x0800b880      0x1b0 ./Src/sched.o
+                0x0800b880                SysTick_Handler
  .text.task_create
-                0x0800beec      0x158 ./Src/sched.o
-                0x0800beec                task_create
+                0x0800ba30      0x158 ./Src/sched.o
+                0x0800ba30                task_create
  .text.task_delay
-                0x0800c044       0xe4 ./Src/sched.o
-                0x0800c044                task_delay
+                0x0800bb88       0xe4 ./Src/sched.o
+                0x0800bb88                task_delay
  .text.task_yield
-                0x0800c128       0x98 ./Src/sched.o
-                0x0800c128                task_yield
+                0x0800bc6c       0x98 ./Src/sched.o
+                0x0800bc6c                task_yield
  .text.task_set_priority
-                0x0800c1c0       0x64 ./Src/sched.o
-                0x0800c1c0                task_set_priority
+                0x0800bd04       0x64 ./Src/sched.o
+                0x0800bd04                task_set_priority
  .text.get_current_task_id
-                0x0800c224       0x18 ./Src/sched.o
-                0x0800c224                get_current_task_id
+                0x0800bd68       0x18 ./Src/sched.o
+                0x0800bd68                get_current_task_id
  .text.get_task_priority
-                0x0800c23c       0x40 ./Src/sched.o
-                0x0800c23c                get_task_priority
- .text.millis   0x0800c27c       0x18 ./Src/sched.o
-                0x0800c27c                millis
+                0x0800bd80       0x40 ./Src/sched.o
+                0x0800bd80                get_task_priority
+ .text.millis   0x0800bdc0       0x18 ./Src/sched.o
+                0x0800bdc0                millis
  .text.get_task_list
-                0x0800c294       0xa8 ./Src/sched.o
-                0x0800c294                get_task_list
+                0x0800bdd8       0xa8 ./Src/sched.o
+                0x0800bdd8                get_task_list
  .text.sched_kill_all_tasks
-                0x0800c33c       0x58 ./Src/sched.o
-                0x0800c33c                sched_kill_all_tasks
+                0x0800be80       0x58 ./Src/sched.o
+                0x0800be80                sched_kill_all_tasks
  .text.sched_start
-                0x0800c394      0x20c ./Src/sched.o
-                0x0800c394                sched_start
+                0x0800bed8      0x20c ./Src/sched.o
+                0x0800bed8                sched_start
  .text.uart_getc_nonblocking
-                0x0800c5a0       0x38 ./Src/shell.o
+                0x0800c0e4       0x38 ./Src/shell.o
  .text.cmd_help
-                0x0800c5d8       0xf4 ./Src/shell.o
+                0x0800c11c       0xf4 ./Src/shell.o
  .text.cmd_chlorine
-                0x0800c6cc       0x38 ./Src/shell.o
+                0x0800c210       0x38 ./Src/shell.o
  .text.cmd_bewitched
-                0x0800c704      0x118 ./Src/shell.o
+                0x0800c248      0x118 ./Src/shell.o
  .text.cmd_library
-                0x0800c81c      0x11c ./Src/shell.o
+                0x0800c360      0x11c ./Src/shell.o
  .text.cmd_invoke
-                0x0800c938      0x134 ./Src/shell.o
+                0x0800c47c      0x134 ./Src/shell.o
  .text.cmd_touch
-                0x0800ca6c      0x134 ./Src/shell.o
+                0x0800c5b0      0x134 ./Src/shell.o
  .text.cmd_edit
-                0x0800cba0      0x144 ./Src/shell.o
+                0x0800c6e4      0x144 ./Src/shell.o
  .text.cmd_append
-                0x0800cce4      0x124 ./Src/shell.o
+                0x0800c828      0x124 ./Src/shell.o
  .text.cmd_remove
-                0x0800ce08       0x84 ./Src/shell.o
+                0x0800c94c       0x84 ./Src/shell.o
  .text.cmd_rename
-                0x0800ce8c      0x2d8 ./Src/shell.o
+                0x0800c9d0      0x2d8 ./Src/shell.o
  .text.cmd_hexdump
-                0x0800d164      0x188 ./Src/shell.o
+                0x0800cca8      0x188 ./Src/shell.o
  .text.cmd_mingle
-                0x0800d2ec       0x74 ./Src/shell.o
- .text.cmd_fly  0x0800d360       0xbc ./Src/shell.o
+                0x0800ce30       0x74 ./Src/shell.o
+ .text.cmd_fly  0x0800cea4       0xbc ./Src/shell.o
  .text.cmd_hourglass
-                0x0800d41c       0xa4 ./Src/shell.o
+                0x0800cf60       0xa4 ./Src/shell.o
  .text.cmd_cauldronVer
-                0x0800d4c0       0xcc ./Src/shell.o
+                0x0800d004       0xcc ./Src/shell.o
  .text.cmd_revive
-                0x0800d58c       0x30 ./Src/shell.o
+                0x0800d0d0       0x30 ./Src/shell.o
  .text.cmd_exit
-                0x0800d5bc       0xb4 ./Src/shell.o
+                0x0800d100       0xb4 ./Src/shell.o
  .text.parse_and_execute
-                0x0800d670      0x264 ./Src/shell.o
+                0x0800d1b4      0x264 ./Src/shell.o
  .text.shell_task
-                0x0800d8d4      0x164 ./Src/shell.o
-                0x0800d8d4                shell_task
+                0x0800d418      0x164 ./Src/shell.o
+                0x0800d418                shell_task
  .text.shell_init
-                0x0800da38       0x38 ./Src/shell.o
-                0x0800da38                shell_init
+                0x0800d57c       0x38 ./Src/shell.o
+                0x0800d57c                shell_init
  .text.random_range
-                0x0800da70       0x28 ./Src/snake.o
+                0x0800d5b4       0x28 ./Src/snake.o
  .text.is_position_occupied
-                0x0800da98       0x70 ./Src/snake.o
+                0x0800d5dc       0x70 ./Src/snake.o
  .text.place_food
-                0x0800db08       0x84 ./Src/snake.o
+                0x0800d64c       0x84 ./Src/snake.o
  .text.draw_game_pixel
-                0x0800db8c       0x46 ./Src/snake.o
- *fill*         0x0800dbd2        0x2 
+                0x0800d6d0       0x46 ./Src/snake.o
+ *fill*         0x0800d716        0x2 
  .text.snake_input_task
-                0x0800dbd4      0x200 ./Src/snake.o
-                0x0800dbd4                snake_input_task
+                0x0800d718      0x200 ./Src/snake.o
+                0x0800d718                snake_input_task
  .text.snake_logic_task
-                0x0800ddd4      0x2d8 ./Src/snake.o
-                0x0800ddd4                snake_logic_task
+                0x0800d918      0x2d8 ./Src/snake.o
+                0x0800d918                snake_logic_task
  .text.snake_render_task
-                0x0800e0ac      0x4cc ./Src/snake.o
-                0x0800e0ac                snake_render_task
+                0x0800dbf0      0x4cc ./Src/snake.o
+                0x0800dbf0                snake_render_task
  .text.snake_reset
-                0x0800e578      0x11c ./Src/snake.o
-                0x0800e578                snake_reset
+                0x0800e0bc      0x11c ./Src/snake.o
+                0x0800e0bc                snake_reset
  .text.snake_init
-                0x0800e694       0x58 ./Src/snake.o
-                0x0800e694                snake_init
+                0x0800e1d8       0x58 ./Src/snake.o
+                0x0800e1d8                snake_init
  .text.snake_cleanup
-                0x0800e6ec       0x28 ./Src/snake.o
-                0x0800e6ec                snake_cleanup
+                0x0800e230       0x28 ./Src/snake.o
+                0x0800e230                snake_cleanup
  .text.snake_get_state
-                0x0800e714       0x2c ./Src/snake.o
-                0x0800e714                snake_get_state
+                0x0800e258       0x2c ./Src/snake.o
+                0x0800e258                snake_get_state
  .text.snake_get_binario
-                0x0800e740       0x50 ./Src/snake.o
-                0x0800e740                snake_get_binario
+                0x0800e284       0x50 ./Src/snake.o
+                0x0800e284                snake_get_binario
  .text.enter_critical
-                0x0800e790       0x10 ./Src/sync.o
+                0x0800e2d4       0x10 ./Src/sync.o
  .text.exit_critical
-                0x0800e7a0       0x10 ./Src/sync.o
+                0x0800e2e4       0x10 ./Src/sync.o
  .text.mutex_init
-                0x0800e7b0       0x36 ./Src/sync.o
-                0x0800e7b0                mutex_init
+                0x0800e2f4       0x36 ./Src/sync.o
+                0x0800e2f4                mutex_init
  .text.mutex_lock
-                0x0800e7e6       0xa0 ./Src/sync.o
-                0x0800e7e6                mutex_lock
+                0x0800e32a       0xa0 ./Src/sync.o
+                0x0800e32a                mutex_lock
  .text.mutex_unlock
-                0x0800e886       0x70 ./Src/sync.o
-                0x0800e886                mutex_unlock
+                0x0800e3ca       0x70 ./Src/sync.o
+                0x0800e3ca                mutex_unlock
  .text.mutex_trylock
-                0x0800e8f6       0x56 ./Src/sync.o
-                0x0800e8f6                mutex_trylock
+                0x0800e43a       0x56 ./Src/sync.o
+                0x0800e43a                mutex_trylock
  .text.mutex_get_inheritance_count
-                0x0800e94c       0x18 ./Src/sync.o
-                0x0800e94c                mutex_get_inheritance_count
+                0x0800e490       0x18 ./Src/sync.o
+                0x0800e490                mutex_get_inheritance_count
  .text.mutex_reset_inheritance_count
-                0x0800e964       0x1a ./Src/sync.o
-                0x0800e964                mutex_reset_inheritance_count
+                0x0800e4a8       0x1a ./Src/sync.o
+                0x0800e4a8                mutex_reset_inheritance_count
  .text.sem_init
-                0x0800e97e       0x40 ./Src/sync.o
-                0x0800e97e                sem_init
+                0x0800e4c2       0x40 ./Src/sync.o
+                0x0800e4c2                sem_init
  .text.random_range
-                0x0800e9be       0x28 ./Src/tanque.o
+                0x0800e502       0x28 ./Src/tanque.o
  .text.draw_horizontal_line
-                0x0800e9e6       0x98 ./Src/tanque.o
+                0x0800e52a       0x98 ./Src/tanque.o
  .text.draw_vertical_line
-                0x0800ea7e       0x96 ./Src/tanque.o
+                0x0800e5c2       0x96 ./Src/tanque.o
  .text.draw_tile_rotated
-                0x0800eb14      0x1e4 ./Src/tanque.o
+                0x0800e658      0x1e4 ./Src/tanque.o
  .text.draw_tile
-                0x0800ecf8       0x24 ./Src/tanque.o
+                0x0800e83c       0x24 ./Src/tanque.o
  .text.draw_projectile
-                0x0800ed1c       0xb4 ./Src/tanque.o
+                0x0800e860       0xb4 ./Src/tanque.o
  .text.redraw_tile_content
-                0x0800edd0      0x150 ./Src/tanque.o
+                0x0800e914      0x150 ./Src/tanque.o
  .text.clear_tank_position
-                0x0800ef20       0x24 ./Src/tanque.o
+                0x0800ea64       0x24 ./Src/tanque.o
  .text.can_move_to
-                0x0800ef44       0x68 ./Src/tanque.o
+                0x0800ea88       0x68 ./Src/tanque.o
  .text.try_move_tank
-                0x0800efac      0x174 ./Src/tanque.o
+                0x0800eaf0      0x174 ./Src/tanque.o
  .text.check_game_over
-                0x0800f120       0xec ./Src/tanque.o
+                0x0800ec64       0xec ./Src/tanque.o
  .text.shoot_projectile
-                0x0800f20c      0x200 ./Src/tanque.o
+                0x0800ed50      0x200 ./Src/tanque.o
  .text.update_projectile_movement
-                0x0800f40c      0x20c ./Src/tanque.o
+                0x0800ef50      0x20c ./Src/tanque.o
  .text.generar_mapa_con_config
-                0x0800f618      0x768 ./Src/tanque.o
+                0x0800f15c      0x768 ./Src/tanque.o
  .text.tanque_input_task
-                0x0800fd80      0x694 ./Src/tanque.o
-                0x0800fd80                tanque_input_task
+                0x0800f8c4      0x694 ./Src/tanque.o
+                0x0800f8c4                tanque_input_task
  .text.tanque_logic_task
-                0x08010414       0xf8 ./Src/tanque.o
-                0x08010414                tanque_logic_task
+                0x0800ff58       0xf8 ./Src/tanque.o
+                0x0800ff58                tanque_logic_task
  .text.tanque_render_task
-                0x0801050c      0x450 ./Src/tanque.o
-                0x0801050c                tanque_render_task
+                0x08010050      0x450 ./Src/tanque.o
+                0x08010050                tanque_render_task
  .text.tanque_init
-                0x0801095c      0x14c ./Src/tanque.o
-                0x0801095c                tanque_init
+                0x080104a0      0x14c ./Src/tanque.o
+                0x080104a0                tanque_init
  .text.tanque_cleanup
-                0x08010aa8       0x28 ./Src/tanque.o
-                0x08010aa8                tanque_cleanup
+                0x080105ec       0x28 ./Src/tanque.o
+                0x080105ec                tanque_cleanup
  .text.is_trail_at
-                0x08010ad0      0x148 ./Src/tron.o
+                0x08010614      0x148 ./Src/tron.o
  .text.add_to_trail_p1
-                0x08010c18       0x64 ./Src/tron.o
+                0x0801075c       0x64 ./Src/tron.o
  .text.add_to_trail_p2
-                0x08010c7c       0x64 ./Src/tron.o
+                0x080107c0       0x64 ./Src/tron.o
  .text.add_to_trail_p3
-                0x08010ce0       0x64 ./Src/tron.o
+                0x08010824       0x64 ./Src/tron.o
  .text.add_to_trail_p4
-                0x08010d44       0x64 ./Src/tron.o
+                0x08010888       0x64 ./Src/tron.o
  .text.draw_game_pixel
-                0x08010da8       0x42 ./Src/tron.o
- *fill*         0x08010dea        0x2 
+                0x080108ec       0x42 ./Src/tron.o
+ *fill*         0x0801092e        0x2 
  .text.tron_input_task
-                0x08010dec      0x378 ./Src/tron.o
-                0x08010dec                tron_input_task
+                0x08010930      0x378 ./Src/tron.o
+                0x08010930                tron_input_task
  .text.tron_logic_task
-                0x08011164      0x4c8 ./Src/tron.o
-                0x08011164                tron_logic_task
+                0x08010ca8      0x4c8 ./Src/tron.o
+                0x08010ca8                tron_logic_task
  .text.tron_render_task
-                0x0801162c      0x61c ./Src/tron.o
-                0x0801162c                tron_render_task
+                0x08011170      0x61c ./Src/tron.o
+                0x08011170                tron_render_task
  .text.tron_reset
-                0x08011c48      0x140 ./Src/tron.o
-                0x08011c48                tron_reset
+                0x0801178c      0x140 ./Src/tron.o
+                0x0801178c                tron_reset
  .text.tron_init
-                0x08011d88       0x54 ./Src/tron.o
-                0x08011d88                tron_init
+                0x080118cc       0x54 ./Src/tron.o
+                0x080118cc                tron_init
  .text.tron_cleanup
-                0x08011ddc       0x28 ./Src/tron.o
-                0x08011ddc                tron_cleanup
+                0x08011920       0x28 ./Src/tron.o
+                0x08011920                tron_cleanup
  .text.is_opposite_direction
-                0x08011e04       0x5e ./Src/tron2.o
- *fill*         0x08011e62        0x2 
+                0x08011948       0x5e ./Src/tron2.o
+ *fill*         0x080119a6        0x2 
  .text.is_trail_at
-                0x08011e64       0xb8 ./Src/tron2.o
+                0x080119a8       0xb8 ./Src/tron2.o
  .text.add_to_trail_p1
-                0x08011f1c       0x64 ./Src/tron2.o
+                0x08011a60       0x64 ./Src/tron2.o
  .text.add_to_trail_p2
-                0x08011f80       0x64 ./Src/tron2.o
+                0x08011ac4       0x64 ./Src/tron2.o
  .text.tron2_input_task
-                0x08011fe4      0x394 ./Src/tron2.o
-                0x08011fe4                tron2_input_task
+                0x08011b28      0x394 ./Src/tron2.o
+                0x08011b28                tron2_input_task
  .text.tron2_logic_task
-                0x08012378      0x29c ./Src/tron2.o
-                0x08012378                tron2_logic_task
+                0x08011ebc      0x29c ./Src/tron2.o
+                0x08011ebc                tron2_logic_task
  .text.tron2_render_task
-                0x08012614      0x8c4 ./Src/tron2.o
-                0x08012614                tron2_render_task
+                0x08012158      0x8c4 ./Src/tron2.o
+                0x08012158                tron2_render_task
  .text.tron2_reset
-                0x08012ed8       0xec ./Src/tron2.o
-                0x08012ed8                tron2_reset
+                0x08012a1c       0xec ./Src/tron2.o
+                0x08012a1c                tron2_reset
  .text.tron2_init
-                0x08012fc4       0x54 ./Src/tron2.o
-                0x08012fc4                tron2_init
+                0x08012b08       0x54 ./Src/tron2.o
+                0x08012b08                tron2_init
  .text.tron2_cleanup
-                0x08013018       0x28 ./Src/tron2.o
-                0x08013018                tron2_cleanup
+                0x08012b5c       0x28 ./Src/tron2.o
+                0x08012b5c                tron2_cleanup
  .text.uart_init
-                0x08013040       0x7c ./Src/uart.o
-                0x08013040                uart_init
+                0x08012b84       0x7c ./Src/uart.o
+                0x08012b84                uart_init
  .text.uart_putc
-                0x080130bc       0x34 ./Src/uart.o
-                0x080130bc                uart_putc
+                0x08012c00       0x34 ./Src/uart.o
+                0x08012c00                uart_putc
  .text.uart_puts
-                0x080130f0       0x2a ./Src/uart.o
-                0x080130f0                uart_puts
- *fill*         0x0801311a        0x2 
+                0x08012c34       0x2a ./Src/uart.o
+                0x08012c34                uart_puts
+ *fill*         0x08012c5e        0x2 
  .text.uart_putint
-                0x0801311c       0x7c ./Src/uart.o
-                0x0801311c                uart_putint
+                0x08012c60       0x7c ./Src/uart.o
+                0x08012c60                uart_putint
  .text.user_app_hello
-                0x08013198       0x50 ./Src/user_apps.o
-                0x08013198                user_app_hello
+                0x08012cdc       0x50 ./Src/user_apps.o
+                0x08012cdc                user_app_hello
  .text.user_app_counter
-                0x080131e8       0xc0 ./Src/user_apps.o
-                0x080131e8                user_app_counter
+                0x08012d2c       0xc0 ./Src/user_apps.o
+                0x08012d2c                user_app_counter
  .text.user_app_blink
-                0x080132a8       0x74 ./Src/user_apps.o
-                0x080132a8                user_app_blink
+                0x08012dec       0x74 ./Src/user_apps.o
+                0x08012dec                user_app_blink
  .text.Reset_Handler
-                0x0801331c       0x50 ./Startup/startup_stm32f446retx.o
-                0x0801331c                Reset_Handler
+                0x08012e60       0x50 ./Startup/startup_stm32f446retx.o
+                0x08012e60                Reset_Handler
  .text.Default_Handler
-                0x0801336c        0x2 ./Startup/startup_stm32f446retx.o
-                0x0801336c                RTC_Alarm_IRQHandler
-                0x0801336c                EXTI2_IRQHandler
-                0x0801336c                TIM8_CC_IRQHandler
-                0x0801336c                SPDIF_Rx_IRQHandler
-                0x0801336c                DebugMon_Handler
-                0x0801336c                SPI4_IRQHandler
-                0x0801336c                TIM1_CC_IRQHandler
-                0x0801336c                QuadSPI_IRQHandler
-                0x0801336c                DMA2_Stream5_IRQHandler
-                0x0801336c                HardFault_Handler
-                0x0801336c                DMA1_Stream5_IRQHandler
-                0x0801336c                PVD_IRQHandler
-                0x0801336c                SDIO_IRQHandler
-                0x0801336c                TAMP_STAMP_IRQHandler
-                0x0801336c                PendSV_Handler
-                0x0801336c                NMI_Handler
-                0x0801336c                CAN2_RX1_IRQHandler
-                0x0801336c                EXTI3_IRQHandler
-                0x0801336c                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0801336c                TIM1_UP_TIM10_IRQHandler
-                0x0801336c                FMPI2C1_error_IRQHandler
-                0x0801336c                TIM8_UP_TIM13_IRQHandler
-                0x0801336c                I2C3_ER_IRQHandler
-                0x0801336c                EXTI0_IRQHandler
-                0x0801336c                I2C2_EV_IRQHandler
-                0x0801336c                DMA1_Stream2_IRQHandler
-                0x0801336c                CAN1_RX0_IRQHandler
-                0x0801336c                OTG_HS_WKUP_IRQHandler
-                0x0801336c                UsageFault_Handler
-                0x0801336c                CAN2_SCE_IRQHandler
-                0x0801336c                DMA2_Stream2_IRQHandler
-                0x0801336c                SPI1_IRQHandler
-                0x0801336c                TIM6_DAC_IRQHandler
-                0x0801336c                TIM1_BRK_TIM9_IRQHandler
-                0x0801336c                DCMI_IRQHandler
-                0x0801336c                CAN2_RX0_IRQHandler
-                0x0801336c                DMA2_Stream3_IRQHandler
-                0x0801336c                FMPI2C1_IRQHandler
-                0x0801336c                SAI2_IRQHandler
-                0x0801336c                USART6_IRQHandler
-                0x0801336c                USART3_IRQHandler
-                0x0801336c                CAN1_RX1_IRQHandler
-                0x0801336c                UART5_IRQHandler
-                0x0801336c                DMA2_Stream0_IRQHandler
-                0x0801336c                TIM4_IRQHandler
-                0x0801336c                I2C1_EV_IRQHandler
-                0x0801336c                HDMI_CEC_IRQHandler
-                0x0801336c                DMA1_Stream6_IRQHandler
-                0x0801336c                DMA1_Stream1_IRQHandler
-                0x0801336c                UART4_IRQHandler
-                0x0801336c                TIM3_IRQHandler
-                0x0801336c                RCC_IRQHandler
-                0x0801336c                TIM8_BRK_TIM12_IRQHandler
-                0x0801336c                Default_Handler
-                0x0801336c                EXTI15_10_IRQHandler
-                0x0801336c                ADC_IRQHandler
-                0x0801336c                DMA1_Stream7_IRQHandler
-                0x0801336c                TIM7_IRQHandler
-                0x0801336c                CAN2_TX_IRQHandler
-                0x0801336c                TIM5_IRQHandler
-                0x0801336c                DMA2_Stream7_IRQHandler
-                0x0801336c                I2C3_EV_IRQHandler
-                0x0801336c                EXTI9_5_IRQHandler
-                0x0801336c                RTC_WKUP_IRQHandler
-                0x0801336c                SPI2_IRQHandler
-                0x0801336c                OTG_HS_EP1_IN_IRQHandler
-                0x0801336c                MemManage_Handler
-                0x0801336c                DMA1_Stream0_IRQHandler
-                0x0801336c                CAN1_TX_IRQHandler
-                0x0801336c                SVC_Handler
-                0x0801336c                EXTI4_IRQHandler
-                0x0801336c                OTG_HS_EP1_OUT_IRQHandler
-                0x0801336c                WWDG_IRQHandler
-                0x0801336c                TIM2_IRQHandler
-                0x0801336c                OTG_FS_WKUP_IRQHandler
-                0x0801336c                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0801336c                OTG_HS_IRQHandler
-                0x0801336c                EXTI1_IRQHandler
-                0x0801336c                USART2_IRQHandler
-                0x0801336c                I2C2_ER_IRQHandler
-                0x0801336c                DMA2_Stream1_IRQHandler
-                0x0801336c                CAN1_SCE_IRQHandler
-                0x0801336c                FLASH_IRQHandler
-                0x0801336c                DMA2_Stream4_IRQHandler
-                0x0801336c                BusFault_Handler
-                0x0801336c                USART1_IRQHandler
-                0x0801336c                OTG_FS_IRQHandler
-                0x0801336c                SPI3_IRQHandler
-                0x0801336c                DMA1_Stream4_IRQHandler
-                0x0801336c                I2C1_ER_IRQHandler
-                0x0801336c                FMC_IRQHandler
-                0x0801336c                DMA2_Stream6_IRQHandler
-                0x0801336c                SAI1_IRQHandler
-                0x0801336c                DMA1_Stream3_IRQHandler
- .text.memset   0x0801336e       0x10 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x0801336e                memset
- .text.strchr   0x0801337e       0x1a C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strchr.o)
-                0x0801337e                strchr
+                0x08012eb0        0x2 ./Startup/startup_stm32f446retx.o
+                0x08012eb0                RTC_Alarm_IRQHandler
+                0x08012eb0                EXTI2_IRQHandler
+                0x08012eb0                TIM8_CC_IRQHandler
+                0x08012eb0                SPDIF_Rx_IRQHandler
+                0x08012eb0                DebugMon_Handler
+                0x08012eb0                SPI4_IRQHandler
+                0x08012eb0                TIM1_CC_IRQHandler
+                0x08012eb0                QuadSPI_IRQHandler
+                0x08012eb0                DMA2_Stream5_IRQHandler
+                0x08012eb0                HardFault_Handler
+                0x08012eb0                DMA1_Stream5_IRQHandler
+                0x08012eb0                PVD_IRQHandler
+                0x08012eb0                SDIO_IRQHandler
+                0x08012eb0                TAMP_STAMP_IRQHandler
+                0x08012eb0                PendSV_Handler
+                0x08012eb0                NMI_Handler
+                0x08012eb0                CAN2_RX1_IRQHandler
+                0x08012eb0                EXTI3_IRQHandler
+                0x08012eb0                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08012eb0                TIM1_UP_TIM10_IRQHandler
+                0x08012eb0                FMPI2C1_error_IRQHandler
+                0x08012eb0                TIM8_UP_TIM13_IRQHandler
+                0x08012eb0                I2C3_ER_IRQHandler
+                0x08012eb0                EXTI0_IRQHandler
+                0x08012eb0                I2C2_EV_IRQHandler
+                0x08012eb0                DMA1_Stream2_IRQHandler
+                0x08012eb0                CAN1_RX0_IRQHandler
+                0x08012eb0                OTG_HS_WKUP_IRQHandler
+                0x08012eb0                UsageFault_Handler
+                0x08012eb0                CAN2_SCE_IRQHandler
+                0x08012eb0                DMA2_Stream2_IRQHandler
+                0x08012eb0                SPI1_IRQHandler
+                0x08012eb0                TIM6_DAC_IRQHandler
+                0x08012eb0                TIM1_BRK_TIM9_IRQHandler
+                0x08012eb0                DCMI_IRQHandler
+                0x08012eb0                CAN2_RX0_IRQHandler
+                0x08012eb0                DMA2_Stream3_IRQHandler
+                0x08012eb0                FMPI2C1_IRQHandler
+                0x08012eb0                SAI2_IRQHandler
+                0x08012eb0                USART6_IRQHandler
+                0x08012eb0                USART3_IRQHandler
+                0x08012eb0                CAN1_RX1_IRQHandler
+                0x08012eb0                UART5_IRQHandler
+                0x08012eb0                DMA2_Stream0_IRQHandler
+                0x08012eb0                TIM4_IRQHandler
+                0x08012eb0                I2C1_EV_IRQHandler
+                0x08012eb0                HDMI_CEC_IRQHandler
+                0x08012eb0                DMA1_Stream6_IRQHandler
+                0x08012eb0                DMA1_Stream1_IRQHandler
+                0x08012eb0                UART4_IRQHandler
+                0x08012eb0                TIM3_IRQHandler
+                0x08012eb0                RCC_IRQHandler
+                0x08012eb0                TIM8_BRK_TIM12_IRQHandler
+                0x08012eb0                Default_Handler
+                0x08012eb0                EXTI15_10_IRQHandler
+                0x08012eb0                ADC_IRQHandler
+                0x08012eb0                DMA1_Stream7_IRQHandler
+                0x08012eb0                TIM7_IRQHandler
+                0x08012eb0                CAN2_TX_IRQHandler
+                0x08012eb0                TIM5_IRQHandler
+                0x08012eb0                DMA2_Stream7_IRQHandler
+                0x08012eb0                I2C3_EV_IRQHandler
+                0x08012eb0                EXTI9_5_IRQHandler
+                0x08012eb0                RTC_WKUP_IRQHandler
+                0x08012eb0                SPI2_IRQHandler
+                0x08012eb0                OTG_HS_EP1_IN_IRQHandler
+                0x08012eb0                MemManage_Handler
+                0x08012eb0                DMA1_Stream0_IRQHandler
+                0x08012eb0                CAN1_TX_IRQHandler
+                0x08012eb0                SVC_Handler
+                0x08012eb0                EXTI4_IRQHandler
+                0x08012eb0                OTG_HS_EP1_OUT_IRQHandler
+                0x08012eb0                WWDG_IRQHandler
+                0x08012eb0                TIM2_IRQHandler
+                0x08012eb0                OTG_FS_WKUP_IRQHandler
+                0x08012eb0                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08012eb0                OTG_HS_IRQHandler
+                0x08012eb0                EXTI1_IRQHandler
+                0x08012eb0                USART2_IRQHandler
+                0x08012eb0                I2C2_ER_IRQHandler
+                0x08012eb0                DMA2_Stream1_IRQHandler
+                0x08012eb0                CAN1_SCE_IRQHandler
+                0x08012eb0                FLASH_IRQHandler
+                0x08012eb0                DMA2_Stream4_IRQHandler
+                0x08012eb0                BusFault_Handler
+                0x08012eb0                USART1_IRQHandler
+                0x08012eb0                OTG_FS_IRQHandler
+                0x08012eb0                SPI3_IRQHandler
+                0x08012eb0                DMA1_Stream4_IRQHandler
+                0x08012eb0                I2C1_ER_IRQHandler
+                0x08012eb0                FMC_IRQHandler
+                0x08012eb0                DMA2_Stream6_IRQHandler
+                0x08012eb0                SAI1_IRQHandler
+                0x08012eb0                DMA1_Stream3_IRQHandler
+ .text.memset   0x08012eb2       0x10 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x08012eb2                memset
+ .text.strchr   0x08012ec2       0x1a C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strchr.o)
+                0x08012ec2                strchr
  .text.__libc_init_array
-                0x08013398       0x48 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x08013398                __libc_init_array
- .text.strcpy   0x080133e0       0x10 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcpy.o)
-                0x080133e0                strcpy
- .text.memcpy   0x080133f0       0x1c C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
-                0x080133f0                memcpy
+                0x08012edc       0x48 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x08012edc                __libc_init_array
+ .text.strcpy   0x08012f24       0x10 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcpy.o)
+                0x08012f24                strcpy
+ .text.memcpy   0x08012f34       0x1c C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x08012f34                memcpy
  *(.glue_7)
- .glue_7        0x0801340c        0x0 linker stubs
+ .glue_7        0x08012f50        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0801340c        0x0 linker stubs
+ .glue_7t       0x08012f50        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0801340c        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08012f50        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0801340c        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0801340c                _init
- .init          0x08013410        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08012f50        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08012f50                _init
+ .init          0x08012f54        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08013418        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08013418                _fini
- .fini          0x0801341c        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08013424                        . = ALIGN (0x4)
-                0x08013424                        _etext = .
+ .fini          0x08012f5c        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08012f5c                _fini
+ .fini          0x08012f60        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08012f68                        . = ALIGN (0x4)
+                0x08012f68                        _etext = .
 
-.vfp11_veneer   0x08013424        0x0
- .vfp11_veneer  0x08013424        0x0 linker stubs
+.vfp11_veneer   0x08012f68        0x0
+ .vfp11_veneer  0x08012f68        0x0 linker stubs
 
-.v4_bx          0x08013424        0x0
- .v4_bx         0x08013424        0x0 linker stubs
+.v4_bx          0x08012f68        0x0
+ .v4_bx         0x08012f68        0x0 linker stubs
 
-.iplt           0x08013424        0x0
- .iplt          0x08013424        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08012f68        0x0
+ .iplt          0x08012f68        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08013424     0x99b8
-                0x08013424                        . = ALIGN (0x4)
+.rodata         0x08012f68     0x93e4
+                0x08012f68                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08013424      0x26d ./Src/api.o
- *fill*         0x08013691        0x3 
- .rodata        0x08013694       0xc9 ./Src/button.o
- *fill*         0x0801375d        0x3 
- .rodata        0x08013760      0x8b4 ./Src/demo_prem.o
- .rodata        0x08014014      0x4ec ./Src/demo_scheduler_rr.o
- .rodata        0x08014500       0x5d ./Src/disco.o
- *fill*         0x0801455d        0x3 
- .rodata        0x08014560      0x640 ./Src/herenciaprioridad.o
- .rodata        0x08014ba0      0x10c ./Src/loader.o
- .rodata        0x08014cac      0xd3c ./Src/main.o
- .rodata        0x080159e8      0x318 ./Src/reconocedor.o
- .rodata        0x08015d00       0x62 ./Src/sched.o
- *fill*         0x08015d62        0x2 
- .rodata        0x08015d64     0x12b0 ./Src/shell.o
- .rodata        0x08017014       0x1a ./Src/snake.o
- *fill*         0x0801702e        0x2 
- .rodata        0x08017030       0x5c ./Src/tanque.o
- .rodata        0x0801708c       0x31 ./Src/tron.o
- *fill*         0x080170bd        0x3 
- .rodata        0x080170c0       0x21 ./Src/tron2.o
- *fill*         0x080170e1        0x3 
- .rodata        0x080170e4       0xbb ./Src/user_apps.o
+ .rodata        0x08012f68      0x26d ./Src/api.o
+ *fill*         0x080131d5        0x3 
+ .rodata        0x080131d8       0xc9 ./Src/button.o
+ *fill*         0x080132a1        0x3 
+ .rodata        0x080132a4      0x638 ./Src/demo_prem.o
+ .rodata        0x080138dc      0x194 ./Src/demo_scheduler_rr.o
+ .rodata        0x08013a70       0x5d ./Src/disco.o
+ *fill*         0x08013acd        0x3 
+ .rodata        0x08013ad0      0x640 ./Src/herenciaprioridad.o
+ .rodata        0x08014110      0x10c ./Src/loader.o
+ .rodata        0x0801421c      0xd3c ./Src/main.o
+ .rodata        0x08014f58      0x318 ./Src/reconocedor.o
+ .rodata        0x08015270       0x62 ./Src/sched.o
+ *fill*         0x080152d2        0x2 
+ .rodata        0x080152d4     0x12b0 ./Src/shell.o
+ .rodata        0x08016584       0x1a ./Src/snake.o
+ *fill*         0x0801659e        0x2 
+ .rodata        0x080165a0       0x5c ./Src/tanque.o
+ .rodata        0x080165fc       0x31 ./Src/tron.o
+ *fill*         0x0801662d        0x3 
+ .rodata        0x08016630       0x21 ./Src/tron2.o
+ *fill*         0x08016651        0x3 
+ .rodata        0x08016654       0xbb ./Src/user_apps.o
  *(.rodata*)
- *fill*         0x0801719f        0x1 
+ *fill*         0x0801670f        0x1 
  .rodata.sprite_p1_idle2
-                0x080171a0      0x190 ./Src/disco.o
+                0x08016710      0x190 ./Src/disco.o
  .rodata.sprite_p1_idle1
-                0x08017330      0x190 ./Src/disco.o
+                0x080168a0      0x190 ./Src/disco.o
  .rodata.sprite_p2_idle2
-                0x080174c0      0x190 ./Src/disco.o
+                0x08016a30      0x190 ./Src/disco.o
  .rodata.sprite_p2_idle1
-                0x08017650      0x190 ./Src/disco.o
+                0x08016bc0      0x190 ./Src/disco.o
  .rodata.sprite_p1_shoot
-                0x080177e0      0x190 ./Src/disco.o
+                0x08016d50      0x190 ./Src/disco.o
  .rodata.sprite_p2_shoot
-                0x08017970      0x190 ./Src/disco.o
+                0x08016ee0      0x190 ./Src/disco.o
  .rodata.banner_tron4p_data
-                0x08017b00      0xa00 ./Src/main.o
+                0x08017070      0xa00 ./Src/main.o
  .rodata.banner_tanque_data
-                0x08018500      0xa00 ./Src/main.o
+                0x08017a70      0xa00 ./Src/main.o
  .rodata.banner_tron2p_data
-                0x08018f00      0xa00 ./Src/main.o
+                0x08018470      0xa00 ./Src/main.o
  .rodata.banner_reconocedor_data
-                0x08019900      0xa00 ./Src/main.o
+                0x08018e70      0xa00 ./Src/main.o
  .rodata.banner_snake_data
-                0x0801a300      0xa00 ./Src/main.o
+                0x08019870      0xa00 ./Src/main.o
  .rodata.banner_disco_data
-                0x0801ad00      0xa00 ./Src/main.o
+                0x0801a270      0xa00 ./Src/main.o
  .rodata.font5x8
-                0x0801b700       0xbe ./Src/pantalla.o
- *fill*         0x0801b7be        0x2 
+                0x0801ac70       0xbe ./Src/pantalla.o
+ *fill*         0x0801ad2e        0x2 
  .rodata.sprite_pared_azul
-                0x0801b7c0      0x190 ./Src/reconocedor.o
+                0x0801ad30      0x190 ./Src/reconocedor.o
  .rodata.sprite_pared_verde
-                0x0801b950      0x190 ./Src/reconocedor.o
+                0x0801aec0      0x190 ./Src/reconocedor.o
  .rodata.sprite_pared_amarilla
-                0x0801bae0      0x190 ./Src/reconocedor.o
+                0x0801b050      0x190 ./Src/reconocedor.o
  .rodata.sprite_caja
-                0x0801bc70      0x190 ./Src/reconocedor.o
+                0x0801b1e0      0x190 ./Src/reconocedor.o
  .rodata.sprite_jugador
-                0x0801be00      0x190 ./Src/reconocedor.o
+                0x0801b370      0x190 ./Src/reconocedor.o
  .rodata.sprite_maniqui_1
-                0x0801bf90      0x190 ./Src/reconocedor.o
+                0x0801b500      0x190 ./Src/reconocedor.o
  .rodata.sprite_maniqui_2
-                0x0801c120      0x190 ./Src/reconocedor.o
+                0x0801b690      0x190 ./Src/reconocedor.o
  .rodata.textura_caja_3d
-                0x0801c2b0       0xc8 ./Src/reconocedor.o
+                0x0801b820       0xc8 ./Src/reconocedor.o
  .rodata.dir_x_3d
-                0x0801c378        0x4 ./Src/reconocedor.o
+                0x0801b8e8        0x4 ./Src/reconocedor.o
  .rodata.dir_y_3d
-                0x0801c37c        0x4 ./Src/reconocedor.o
+                0x0801b8ec        0x4 ./Src/reconocedor.o
  .rodata.sprite_bloque_destructible
-                0x0801c380      0x190 ./Src/tanque.o
+                0x0801b8f0      0x190 ./Src/tanque.o
  .rodata.sprite_bloque_acero
-                0x0801c510      0x190 ./Src/tanque.o
+                0x0801ba80      0x190 ./Src/tanque.o
  .rodata.sprite_planta
-                0x0801c6a0      0x190 ./Src/tanque.o
+                0x0801bc10      0x190 ./Src/tanque.o
  .rodata.sprite_tanque_azul
-                0x0801c830      0x190 ./Src/tanque.o
+                0x0801bda0      0x190 ./Src/tanque.o
  .rodata.sprite_tanque_rojo
-                0x0801c9c0      0x190 ./Src/tanque.o
+                0x0801bf30      0x190 ./Src/tanque.o
  .rodata.sprite_p1_data
-                0x0801cb50       0xc4 ./Src/tron2.o
+                0x0801c0c0       0xc4 ./Src/tron2.o
  .rodata.sprite_p2_data
-                0x0801cc14       0xc4 ./Src/tron2.o
+                0x0801c184       0xc4 ./Src/tron2.o
  .rodata._ctype_
-                0x0801ccd8      0x101 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-ctype_.o)
-                0x0801ccd8                _ctype_
-                0x0801cddc                        . = ALIGN (0x4)
- *fill*         0x0801cdd9        0x3 
+                0x0801c248      0x101 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-ctype_.o)
+                0x0801c248                _ctype_
+                0x0801c34c                        . = ALIGN (0x4)
+ *fill*         0x0801c349        0x3 
 
-.ARM.extab      0x0801cddc        0x0
-                0x0801cddc                        . = ALIGN (0x4)
+.ARM.extab      0x0801c34c        0x0
+                0x0801c34c                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0801cddc                        . = ALIGN (0x4)
+                0x0801c34c                        . = ALIGN (0x4)
 
-.ARM            0x0801cddc        0x8
-                0x0801cddc                        . = ALIGN (0x4)
-                0x0801cddc                        __exidx_start = .
+.ARM            0x0801c34c        0x8
+                0x0801c34c                        . = ALIGN (0x4)
+                0x0801c34c                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0801cddc        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
- .ARM.exidx     0x0801cde4        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x0801c34c        0x8 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
+ .ARM.exidx     0x0801c354        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
-                0x0801cde4                        __exidx_end = .
-                0x0801cde4                        . = ALIGN (0x4)
+                0x0801c354                        __exidx_end = .
+                0x0801c354                        . = ALIGN (0x4)
 
-.preinit_array  0x0801cde4        0x0
-                0x0801cde4                        . = ALIGN (0x4)
-                0x0801cde4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0801c354        0x0
+                0x0801c354                        . = ALIGN (0x4)
+                0x0801c354                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0801cde4                        PROVIDE (__preinit_array_end = .)
-                0x0801cde4                        . = ALIGN (0x4)
+                0x0801c354                        PROVIDE (__preinit_array_end = .)
+                0x0801c354                        . = ALIGN (0x4)
 
-.init_array     0x0801cde4        0x4
-                0x0801cde4                        . = ALIGN (0x4)
-                0x0801cde4                        PROVIDE (__init_array_start = .)
+.init_array     0x0801c354        0x4
+                0x0801c354                        . = ALIGN (0x4)
+                0x0801c354                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0801cde4        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0801cde8                        PROVIDE (__init_array_end = .)
-                0x0801cde8                        . = ALIGN (0x4)
+ .init_array    0x0801c354        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0801c358                        PROVIDE (__init_array_end = .)
+                0x0801c358                        . = ALIGN (0x4)
 
-.fini_array     0x0801cde8        0x4
-                0x0801cde8                        . = ALIGN (0x4)
+.fini_array     0x0801c358        0x4
+                0x0801c358                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0801cde8        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0801c358        0x4 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0801cdec                        . = ALIGN (0x4)
-                0x0801cdec                        _sidata = LOADADDR (.data)
+                0x0801c35c                        . = ALIGN (0x4)
+                0x0801c35c                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0801cdec        0x0
- .rel.iplt      0x0801cdec        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0801c35c        0x0
+ .rel.iplt      0x0801c35c        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000      0x130 load address 0x0801cdec
+.data           0x20000000      0x130 load address 0x0801c35c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2958,11 +2962,11 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  *fill*         0x2000012e        0x2 
                 0x20000130                        _edata = .
 
-.igot.plt       0x20000130        0x0 load address 0x0801cf1c
+.igot.plt       0x20000130        0x0 load address 0x0801c48c
  .igot.plt      0x20000130        0x0 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x20000130                        . = ALIGN (0x4)
 
-.bss            0x20000130     0xb864 load address 0x0801cf1c
+.bss            0x20000130     0xb864 load address 0x0801c48c
                 0x20000130                        _sbss = .
                 0x20000130                        __bss_start__ = _sbss
  *(.bss)
@@ -3548,7 +3552,7 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x2000b994                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2000b994      0x604 load address 0x0801cf1c
+                0x2000b994      0x604 load address 0x0801c48c
                 0x2000b998                        . = ALIGN (0x8)
  *fill*         0x2000b994        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -3647,57 +3651,57 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x00000000     0xe834
- .debug_info    0x00000000      0x258 ./Src/aleatorio.o
- .debug_info    0x00000258     0x1ad4 ./Src/api.o
- .debug_info    0x00001d2c      0x3ef ./Src/button.o
- .debug_info    0x0000211b      0x2af ./Src/context.o
- .debug_info    0x000023ca      0x6e4 ./Src/demo_prem.o
- .debug_info    0x00002aae      0x71f ./Src/demo_scheduler_rr.o
- .debug_info    0x000031cd     0x130d ./Src/disco.o
- .debug_info    0x000044da      0x66a ./Src/fs.o
- .debug_info    0x00004b44      0x659 ./Src/herenciaprioridad.o
- .debug_info    0x0000519d      0x254 ./Src/loader.o
- .debug_info    0x000053f1      0xcb2 ./Src/main.o
- .debug_info    0x000060a3      0x616 ./Src/pantalla.o
- .debug_info    0x000066b9      0xbac ./Src/ramfs.o
- .debug_info    0x00007265     0x1e21 ./Src/reconocedor.o
- .debug_info    0x00009086      0x768 ./Src/sched.o
- .debug_info    0x000097ee      0xb8d ./Src/shell.o
- .debug_info    0x0000a37b      0xb2c ./Src/snake.o
- .debug_info    0x0000aea7      0x4ae ./Src/sync.o
- .debug_info    0x0000b355     0x175b ./Src/tanque.o
- .debug_info    0x0000cab0      0xcca ./Src/tron.o
- .debug_info    0x0000d77a      0xd02 ./Src/tron2.o
- .debug_info    0x0000e47c      0x154 ./Src/uart.o
- .debug_info    0x0000e5d0      0x234 ./Src/user_apps.o
- .debug_info    0x0000e804       0x30 ./Startup/startup_stm32f446retx.o
+.debug_info     0x00000000     0xe803
+ .debug_info    0x00000000      0x25f ./Src/aleatorio.o
+ .debug_info    0x0000025f     0x1ade ./Src/api.o
+ .debug_info    0x00001d3d      0x3ef ./Src/button.o
+ .debug_info    0x0000212c      0x2b6 ./Src/context.o
+ .debug_info    0x000023e2      0x6e7 ./Src/demo_prem.o
+ .debug_info    0x00002ac9      0x696 ./Src/demo_scheduler_rr.o
+ .debug_info    0x0000315f     0x130e ./Src/disco.o
+ .debug_info    0x0000446d      0x66a ./Src/fs.o
+ .debug_info    0x00004ad7      0x65c ./Src/herenciaprioridad.o
+ .debug_info    0x00005133      0x254 ./Src/loader.o
+ .debug_info    0x00005387      0xcd7 ./Src/main.o
+ .debug_info    0x0000605e      0x616 ./Src/pantalla.o
+ .debug_info    0x00006674      0xbac ./Src/ramfs.o
+ .debug_info    0x00007220     0x1e22 ./Src/reconocedor.o
+ .debug_info    0x00009042      0x768 ./Src/sched.o
+ .debug_info    0x000097aa      0xb99 ./Src/shell.o
+ .debug_info    0x0000a343      0xb22 ./Src/snake.o
+ .debug_info    0x0000ae65      0x4ae ./Src/sync.o
+ .debug_info    0x0000b313     0x175d ./Src/tanque.o
+ .debug_info    0x0000ca70      0xcd1 ./Src/tron.o
+ .debug_info    0x0000d741      0xd03 ./Src/tron2.o
+ .debug_info    0x0000e444      0x154 ./Src/uart.o
+ .debug_info    0x0000e598      0x23b ./Src/user_apps.o
+ .debug_info    0x0000e7d3       0x30 ./Startup/startup_stm32f446retx.o
 
-.debug_abbrev   0x00000000     0x3065
+.debug_abbrev   0x00000000     0x31d1
  .debug_abbrev  0x00000000      0x13c ./Src/aleatorio.o
- .debug_abbrev  0x0000013c      0x3d7 ./Src/api.o
- .debug_abbrev  0x00000513      0x167 ./Src/button.o
- .debug_abbrev  0x0000067a      0x191 ./Src/context.o
- .debug_abbrev  0x0000080b      0x1f9 ./Src/demo_prem.o
- .debug_abbrev  0x00000a04      0x1c9 ./Src/demo_scheduler_rr.o
- .debug_abbrev  0x00000bcd      0x260 ./Src/disco.o
- .debug_abbrev  0x00000e2d      0x1c5 ./Src/fs.o
- .debug_abbrev  0x00000ff2      0x201 ./Src/herenciaprioridad.o
- .debug_abbrev  0x000011f3      0x198 ./Src/loader.o
- .debug_abbrev  0x0000138b      0x2a1 ./Src/main.o
- .debug_abbrev  0x0000162c      0x1b8 ./Src/pantalla.o
- .debug_abbrev  0x000017e4      0x28a ./Src/ramfs.o
- .debug_abbrev  0x00001a6e      0x285 ./Src/reconocedor.o
- .debug_abbrev  0x00001cf3      0x2d6 ./Src/sched.o
- .debug_abbrev  0x00001fc9      0x2ac ./Src/shell.o
- .debug_abbrev  0x00002275      0x2e6 ./Src/snake.o
- .debug_abbrev  0x0000255b      0x1b4 ./Src/sync.o
- .debug_abbrev  0x0000270f      0x286 ./Src/tanque.o
- .debug_abbrev  0x00002995      0x24d ./Src/tron.o
- .debug_abbrev  0x00002be2      0x25b ./Src/tron2.o
- .debug_abbrev  0x00002e3d       0xfb ./Src/uart.o
- .debug_abbrev  0x00002f38      0x109 ./Src/user_apps.o
- .debug_abbrev  0x00003041       0x24 ./Startup/startup_stm32f446retx.o
+ .debug_abbrev  0x0000013c      0x3d1 ./Src/api.o
+ .debug_abbrev  0x0000050d      0x167 ./Src/button.o
+ .debug_abbrev  0x00000674      0x191 ./Src/context.o
+ .debug_abbrev  0x00000805      0x210 ./Src/demo_prem.o
+ .debug_abbrev  0x00000a15      0x1ce ./Src/demo_scheduler_rr.o
+ .debug_abbrev  0x00000be3      0x277 ./Src/disco.o
+ .debug_abbrev  0x00000e5a      0x1c5 ./Src/fs.o
+ .debug_abbrev  0x0000101f      0x218 ./Src/herenciaprioridad.o
+ .debug_abbrev  0x00001237      0x198 ./Src/loader.o
+ .debug_abbrev  0x000013cf      0x2a6 ./Src/main.o
+ .debug_abbrev  0x00001675      0x1b8 ./Src/pantalla.o
+ .debug_abbrev  0x0000182d      0x28a ./Src/ramfs.o
+ .debug_abbrev  0x00001ab7      0x2c1 ./Src/reconocedor.o
+ .debug_abbrev  0x00001d78      0x2d6 ./Src/sched.o
+ .debug_abbrev  0x0000204e      0x307 ./Src/shell.o
+ .debug_abbrev  0x00002355      0x300 ./Src/snake.o
+ .debug_abbrev  0x00002655      0x1b4 ./Src/sync.o
+ .debug_abbrev  0x00002809      0x29e ./Src/tanque.o
+ .debug_abbrev  0x00002aa7      0x266 ./Src/tron.o
+ .debug_abbrev  0x00002d0d      0x272 ./Src/tron2.o
+ .debug_abbrev  0x00002f7f       0xfb ./Src/uart.o
+ .debug_abbrev  0x0000307a      0x133 ./Src/user_apps.o
+ .debug_abbrev  0x000031ad       0x24 ./Startup/startup_stm32f446retx.o
 
 .debug_aranges  0x00000000      0xf80
  .debug_aranges
@@ -3800,116 +3804,116 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000bf1       0x19 ./Startup/startup_stm32f446retx.o
 
-.debug_macro    0x00000000     0x321a
- .debug_macro   0x00000000       0x76 ./Src/aleatorio.o
- .debug_macro   0x00000076      0xae4 ./Src/aleatorio.o
- .debug_macro   0x00000b5a       0x22 ./Src/aleatorio.o
- .debug_macro   0x00000b7c       0x8e ./Src/aleatorio.o
- .debug_macro   0x00000c0a       0x51 ./Src/aleatorio.o
- .debug_macro   0x00000c5b      0x103 ./Src/aleatorio.o
- .debug_macro   0x00000d5e       0x6a ./Src/aleatorio.o
- .debug_macro   0x00000dc8      0x1df ./Src/aleatorio.o
- .debug_macro   0x00000fa7       0x10 ./Src/aleatorio.o
- .debug_macro   0x00000fb7      0x1af ./Src/api.o
- .debug_macro   0x00001166      0x190 ./Src/api.o
- .debug_macro   0x000012f6       0x72 ./Src/api.o
- .debug_macro   0x00001368       0x58 ./Src/api.o
- .debug_macro   0x000013c0       0x1c ./Src/api.o
- .debug_macro   0x000013dc       0x4c ./Src/api.o
- .debug_macro   0x00001428       0x61 ./Src/api.o
- .debug_macro   0x00001489       0x2a ./Src/api.o
- .debug_macro   0x000014b3       0x43 ./Src/api.o
- .debug_macro   0x000014f6       0x34 ./Src/api.o
- .debug_macro   0x0000152a      0x370 ./Src/api.o
- .debug_macro   0x0000189a       0x16 ./Src/api.o
- .debug_macro   0x000018b0       0x4a ./Src/api.o
- .debug_macro   0x000018fa       0x34 ./Src/api.o
- .debug_macro   0x0000192e       0x10 ./Src/api.o
- .debug_macro   0x0000193e       0x58 ./Src/api.o
- .debug_macro   0x00001996       0x8e ./Src/api.o
- .debug_macro   0x00001a24       0x1c ./Src/api.o
- .debug_macro   0x00001a40      0x185 ./Src/api.o
- .debug_macro   0x00001bc5       0x10 ./Src/api.o
- .debug_macro   0x00001bd5       0x3c ./Src/api.o
- .debug_macro   0x00001c11       0x20 ./Src/api.o
- .debug_macro   0x00001c31       0xa3 ./Src/button.o
- .debug_macro   0x00001cd4       0x6d ./Src/context.o
- .debug_macro   0x00001d41       0xc1 ./Src/demo_prem.o
- .debug_macro   0x00001e02       0xbb ./Src/demo_scheduler_rr.o
- .debug_macro   0x00001ebd      0x10d ./Src/disco.o
- .debug_macro   0x00001fca      0x143 ./Src/fs.o
- .debug_macro   0x0000210d       0x1c ./Src/fs.o
- .debug_macro   0x00002129       0xbb ./Src/herenciaprioridad.o
- .debug_macro   0x000021e4      0x150 ./Src/loader.o
- .debug_macro   0x00002334      0x1c2 ./Src/main.o
- .debug_macro   0x000024f6       0x22 ./Src/main.o
- .debug_macro   0x00002518       0xf6 ./Src/pantalla.o
- .debug_macro   0x0000260e       0x46 ./Src/pantalla.o
- .debug_macro   0x00002654      0x14d ./Src/ramfs.o
- .debug_macro   0x000027a1      0x14d ./Src/reconocedor.o
- .debug_macro   0x000028ee       0xb5 ./Src/sched.o
- .debug_macro   0x000029a3      0x175 ./Src/shell.o
- .debug_macro   0x00002b18      0x11f ./Src/shell.o
- .debug_macro   0x00002c37      0x1bb ./Src/snake.o
- .debug_macro   0x00002df2       0x76 ./Src/sync.o
- .debug_macro   0x00002e68       0xf6 ./Src/tanque.o
- .debug_macro   0x00002f5e       0xc3 ./Src/tron.o
- .debug_macro   0x00003021       0xc9 ./Src/tron2.o
- .debug_macro   0x000030ea       0xb5 ./Src/uart.o
- .debug_macro   0x0000319f       0x7b ./Src/user_apps.o
+.debug_macro    0x00000000     0x3244
+ .debug_macro   0x00000000       0x7f ./Src/aleatorio.o
+ .debug_macro   0x0000007f      0xae4 ./Src/aleatorio.o
+ .debug_macro   0x00000b63       0x22 ./Src/aleatorio.o
+ .debug_macro   0x00000b85       0x8e ./Src/aleatorio.o
+ .debug_macro   0x00000c13       0x51 ./Src/aleatorio.o
+ .debug_macro   0x00000c64      0x103 ./Src/aleatorio.o
+ .debug_macro   0x00000d67       0x6a ./Src/aleatorio.o
+ .debug_macro   0x00000dd1      0x1df ./Src/aleatorio.o
+ .debug_macro   0x00000fb0       0x10 ./Src/aleatorio.o
+ .debug_macro   0x00000fc0      0x190 ./Src/aleatorio.o
+ .debug_macro   0x00001150      0x1af ./Src/api.o
+ .debug_macro   0x000012ff       0x82 ./Src/api.o
+ .debug_macro   0x00001381       0x58 ./Src/api.o
+ .debug_macro   0x000013d9       0x1c ./Src/api.o
+ .debug_macro   0x000013f5       0x4c ./Src/api.o
+ .debug_macro   0x00001441       0x61 ./Src/api.o
+ .debug_macro   0x000014a2       0x2a ./Src/api.o
+ .debug_macro   0x000014cc       0x43 ./Src/api.o
+ .debug_macro   0x0000150f       0x34 ./Src/api.o
+ .debug_macro   0x00001543      0x370 ./Src/api.o
+ .debug_macro   0x000018b3       0x16 ./Src/api.o
+ .debug_macro   0x000018c9       0x4a ./Src/api.o
+ .debug_macro   0x00001913       0x34 ./Src/api.o
+ .debug_macro   0x00001947       0x10 ./Src/api.o
+ .debug_macro   0x00001957       0x58 ./Src/api.o
+ .debug_macro   0x000019af       0x8e ./Src/api.o
+ .debug_macro   0x00001a3d       0x1c ./Src/api.o
+ .debug_macro   0x00001a59      0x185 ./Src/api.o
+ .debug_macro   0x00001bde       0x10 ./Src/api.o
+ .debug_macro   0x00001bee       0x3c ./Src/api.o
+ .debug_macro   0x00001c2a       0x20 ./Src/api.o
+ .debug_macro   0x00001c4a       0xa3 ./Src/button.o
+ .debug_macro   0x00001ced       0x76 ./Src/context.o
+ .debug_macro   0x00001d63       0xc5 ./Src/demo_prem.o
+ .debug_macro   0x00001e28       0xbf ./Src/demo_scheduler_rr.o
+ .debug_macro   0x00001ee7      0x10d ./Src/disco.o
+ .debug_macro   0x00001ff4      0x143 ./Src/fs.o
+ .debug_macro   0x00002137       0x1c ./Src/fs.o
+ .debug_macro   0x00002153       0xbb ./Src/herenciaprioridad.o
+ .debug_macro   0x0000220e      0x150 ./Src/loader.o
+ .debug_macro   0x0000235e      0x1c2 ./Src/main.o
+ .debug_macro   0x00002520       0x22 ./Src/main.o
+ .debug_macro   0x00002542       0xf6 ./Src/pantalla.o
+ .debug_macro   0x00002638       0x46 ./Src/pantalla.o
+ .debug_macro   0x0000267e      0x14d ./Src/ramfs.o
+ .debug_macro   0x000027cb      0x14d ./Src/reconocedor.o
+ .debug_macro   0x00002918       0xb5 ./Src/sched.o
+ .debug_macro   0x000029cd      0x175 ./Src/shell.o
+ .debug_macro   0x00002b42      0x11f ./Src/shell.o
+ .debug_macro   0x00002c61      0x1bb ./Src/snake.o
+ .debug_macro   0x00002e1c       0x76 ./Src/sync.o
+ .debug_macro   0x00002e92       0xf6 ./Src/tanque.o
+ .debug_macro   0x00002f88       0xc3 ./Src/tron.o
+ .debug_macro   0x0000304b       0xc9 ./Src/tron2.o
+ .debug_macro   0x00003114       0xb5 ./Src/uart.o
+ .debug_macro   0x000031c9       0x7b ./Src/user_apps.o
 
-.debug_line     0x00000000    0x10271
- .debug_line    0x00000000      0x5a9 ./Src/aleatorio.o
- .debug_line    0x000005a9     0x1164 ./Src/api.o
- .debug_line    0x0000170d      0x671 ./Src/button.o
- .debug_line    0x00001d7e      0x59b ./Src/context.o
- .debug_line    0x00002319      0x879 ./Src/demo_prem.o
- .debug_line    0x00002b92      0x991 ./Src/demo_scheduler_rr.o
- .debug_line    0x00003523     0x141f ./Src/disco.o
- .debug_line    0x00004942      0x93a ./Src/fs.o
- .debug_line    0x0000527c      0x7d1 ./Src/herenciaprioridad.o
- .debug_line    0x00005a4d      0x63c ./Src/loader.o
- .debug_line    0x00006089      0xc51 ./Src/main.o
- .debug_line    0x00006cda      0x846 ./Src/pantalla.o
- .debug_line    0x00007520      0xd41 ./Src/ramfs.o
- .debug_line    0x00008261     0x1b61 ./Src/reconocedor.o
- .debug_line    0x00009dc2      0x987 ./Src/sched.o
- .debug_line    0x0000a749      0xfc7 ./Src/shell.o
- .debug_line    0x0000b710      0xbaf ./Src/snake.o
- .debug_line    0x0000c2bf      0x752 ./Src/sync.o
- .debug_line    0x0000ca11     0x13f8 ./Src/tanque.o
- .debug_line    0x0000de09      0xd70 ./Src/tron.o
- .debug_line    0x0000eb79      0xcf6 ./Src/tron2.o
- .debug_line    0x0000f86f      0x4e5 ./Src/uart.o
- .debug_line    0x0000fd54      0x4a2 ./Src/user_apps.o
- .debug_line    0x000101f6       0x7b ./Startup/startup_stm32f446retx.o
+.debug_line     0x00000000    0x10184
+ .debug_line    0x00000000      0x5b5 ./Src/aleatorio.o
+ .debug_line    0x000005b5     0x1165 ./Src/api.o
+ .debug_line    0x0000171a      0x673 ./Src/button.o
+ .debug_line    0x00001d8d      0x5aa ./Src/context.o
+ .debug_line    0x00002337      0x869 ./Src/demo_prem.o
+ .debug_line    0x00002ba0      0x896 ./Src/demo_scheduler_rr.o
+ .debug_line    0x00003436     0x141f ./Src/disco.o
+ .debug_line    0x00004855      0x93a ./Src/fs.o
+ .debug_line    0x0000518f      0x7d1 ./Src/herenciaprioridad.o
+ .debug_line    0x00005960      0x63c ./Src/loader.o
+ .debug_line    0x00005f9c      0xc51 ./Src/main.o
+ .debug_line    0x00006bed      0x846 ./Src/pantalla.o
+ .debug_line    0x00007433      0xd41 ./Src/ramfs.o
+ .debug_line    0x00008174     0x1b61 ./Src/reconocedor.o
+ .debug_line    0x00009cd5      0x987 ./Src/sched.o
+ .debug_line    0x0000a65c      0xfc7 ./Src/shell.o
+ .debug_line    0x0000b623      0xbaf ./Src/snake.o
+ .debug_line    0x0000c1d2      0x752 ./Src/sync.o
+ .debug_line    0x0000c924     0x13f8 ./Src/tanque.o
+ .debug_line    0x0000dd1c      0xd70 ./Src/tron.o
+ .debug_line    0x0000ea8c      0xcf6 ./Src/tron2.o
+ .debug_line    0x0000f782      0x4e5 ./Src/uart.o
+ .debug_line    0x0000fc67      0x4a2 ./Src/user_apps.o
+ .debug_line    0x00010109       0x7b ./Startup/startup_stm32f446retx.o
 
-.debug_str      0x00000000     0xcf74
- .debug_str     0x00000000     0xcf74 ./Src/aleatorio.o
-                               0x3f15 (size before relaxing)
- .debug_str     0x0000cf74     0x86f4 ./Src/api.o
- .debug_str     0x0000cf74     0x40c5 ./Src/button.o
- .debug_str     0x0000cf74     0x3e9b ./Src/context.o
- .debug_str     0x0000cf74     0x484b ./Src/demo_prem.o
- .debug_str     0x0000cf74     0x480a ./Src/demo_scheduler_rr.o
- .debug_str     0x0000cf74     0x4e4e ./Src/disco.o
- .debug_str     0x0000cf74     0x74ca ./Src/fs.o
- .debug_str     0x0000cf74     0x4833 ./Src/herenciaprioridad.o
- .debug_str     0x0000cf74     0x74bd ./Src/loader.o
- .debug_str     0x0000cf74     0x7f97 ./Src/main.o
- .debug_str     0x0000cf74     0x4377 ./Src/pantalla.o
- .debug_str     0x0000cf74     0x7788 ./Src/ramfs.o
- .debug_str     0x0000cf74     0x51f1 ./Src/reconocedor.o
- .debug_str     0x0000cf74     0x4239 ./Src/sched.o
- .debug_str     0x0000cf74     0x827b ./Src/shell.o
- .debug_str     0x0000cf74     0x7cc3 ./Src/snake.o
- .debug_str     0x0000cf74     0x4033 ./Src/sync.o
- .debug_str     0x0000cf74     0x4e35 ./Src/tanque.o
- .debug_str     0x0000cf74     0x4b3a ./Src/tron.o
- .debug_str     0x0000cf74     0x4ab1 ./Src/tron2.o
- .debug_str     0x0000cf74     0x3fd8 ./Src/uart.o
- .debug_str     0x0000cf74     0x4409 ./Src/user_apps.o
- .debug_str     0x0000cf74       0x77 ./Startup/startup_stm32f446retx.o
+.debug_str      0x00000000     0xcf6a
+ .debug_str     0x00000000     0xcf6a ./Src/aleatorio.o
+                               0x4270 (size before relaxing)
+ .debug_str     0x0000cf6a     0x86f4 ./Src/api.o
+ .debug_str     0x0000cf6a     0x40c5 ./Src/button.o
+ .debug_str     0x0000cf6a     0x41f6 ./Src/context.o
+ .debug_str     0x0000cf6a     0x484b ./Src/demo_prem.o
+ .debug_str     0x0000cf6a     0x4800 ./Src/demo_scheduler_rr.o
+ .debug_str     0x0000cf6a     0x4e4e ./Src/disco.o
+ .debug_str     0x0000cf6a     0x74ca ./Src/fs.o
+ .debug_str     0x0000cf6a     0x4833 ./Src/herenciaprioridad.o
+ .debug_str     0x0000cf6a     0x74bd ./Src/loader.o
+ .debug_str     0x0000cf6a     0x7f97 ./Src/main.o
+ .debug_str     0x0000cf6a     0x4377 ./Src/pantalla.o
+ .debug_str     0x0000cf6a     0x7788 ./Src/ramfs.o
+ .debug_str     0x0000cf6a     0x51f1 ./Src/reconocedor.o
+ .debug_str     0x0000cf6a     0x4239 ./Src/sched.o
+ .debug_str     0x0000cf6a     0x827b ./Src/shell.o
+ .debug_str     0x0000cf6a     0x7cc3 ./Src/snake.o
+ .debug_str     0x0000cf6a     0x4033 ./Src/sync.o
+ .debug_str     0x0000cf6a     0x4e35 ./Src/tanque.o
+ .debug_str     0x0000cf6a     0x4b3a ./Src/tron.o
+ .debug_str     0x0000cf6a     0x4ab1 ./Src/tron2.o
+ .debug_str     0x0000cf6a     0x3fd8 ./Src/uart.o
+ .debug_str     0x0000cf6a     0x4409 ./Src/user_apps.o
+ .debug_str     0x0000cf6a       0x77 ./Startup/startup_stm32f446retx.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/aleatorio.o
@@ -3937,38 +3941,38 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .comment       0x00000043       0x44 ./Src/uart.o
  .comment       0x00000043       0x44 ./Src/user_apps.o
 
-.debug_frame    0x00000000     0x3d64
+.debug_frame    0x00000000     0x3d60
  .debug_frame   0x00000000      0x100 ./Src/aleatorio.o
  .debug_frame   0x00000100      0xc64 ./Src/api.o
  .debug_frame   0x00000d64      0x1d0 ./Src/button.o
  .debug_frame   0x00000f34      0x11c ./Src/context.o
  .debug_frame   0x00001050      0x2a0 ./Src/demo_prem.o
- .debug_frame   0x000012f0      0x320 ./Src/demo_scheduler_rr.o
- .debug_frame   0x00001610      0x244 ./Src/disco.o
- .debug_frame   0x00001854      0x18c ./Src/fs.o
- .debug_frame   0x000019e0      0x25c ./Src/herenciaprioridad.o
- .debug_frame   0x00001c3c       0x94 ./Src/loader.o
- .debug_frame   0x00001cd0      0x19c ./Src/main.o
- .debug_frame   0x00001e6c      0x248 ./Src/pantalla.o
- .debug_frame   0x000020b4      0x370 ./Src/ramfs.o
- .debug_frame   0x00002424      0x4c0 ./Src/reconocedor.o
- .debug_frame   0x000028e4      0x2ac ./Src/sched.o
- .debug_frame   0x00002b90      0x300 ./Src/shell.o
- .debug_frame   0x00002e90      0x1e0 ./Src/snake.o
- .debug_frame   0x00003070      0x240 ./Src/sync.o
- .debug_frame   0x000032b0      0x354 ./Src/tanque.o
- .debug_frame   0x00003604      0x28c ./Src/tron.o
- .debug_frame   0x00003890      0x200 ./Src/tron2.o
- .debug_frame   0x00003a90       0xbc ./Src/uart.o
- .debug_frame   0x00003b4c       0x74 ./Src/user_apps.o
- .debug_frame   0x00003bc0       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00003be0       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strchr.o)
- .debug_frame   0x00003c00       0x2c C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
- .debug_frame   0x00003c2c       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
- .debug_frame   0x00003c4c       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcpy.o)
- .debug_frame   0x00003c6c       0x28 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
- .debug_frame   0x00003c94       0xac C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00003d40       0x24 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x000012f0      0x31c ./Src/demo_scheduler_rr.o
+ .debug_frame   0x0000160c      0x244 ./Src/disco.o
+ .debug_frame   0x00001850      0x18c ./Src/fs.o
+ .debug_frame   0x000019dc      0x25c ./Src/herenciaprioridad.o
+ .debug_frame   0x00001c38       0x94 ./Src/loader.o
+ .debug_frame   0x00001ccc      0x19c ./Src/main.o
+ .debug_frame   0x00001e68      0x248 ./Src/pantalla.o
+ .debug_frame   0x000020b0      0x370 ./Src/ramfs.o
+ .debug_frame   0x00002420      0x4c0 ./Src/reconocedor.o
+ .debug_frame   0x000028e0      0x2ac ./Src/sched.o
+ .debug_frame   0x00002b8c      0x300 ./Src/shell.o
+ .debug_frame   0x00002e8c      0x1e0 ./Src/snake.o
+ .debug_frame   0x0000306c      0x240 ./Src/sync.o
+ .debug_frame   0x000032ac      0x354 ./Src/tanque.o
+ .debug_frame   0x00003600      0x28c ./Src/tron.o
+ .debug_frame   0x0000388c      0x200 ./Src/tron2.o
+ .debug_frame   0x00003a8c       0xbc ./Src/uart.o
+ .debug_frame   0x00003b48       0x74 ./Src/user_apps.o
+ .debug_frame   0x00003bbc       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00003bdc       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strchr.o)
+ .debug_frame   0x00003bfc       0x2c C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00003c28       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
+ .debug_frame   0x00003c48       0x20 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcpy.o)
+ .debug_frame   0x00003c68       0x28 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x00003c90       0xac C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00003d3c       0x24 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
 
 .debug_line_str
                 0x00000000       0x5b

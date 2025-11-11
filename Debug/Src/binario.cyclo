@@ -1,5 +1,5 @@
-../Src/binario.c:6:10:binario_calcular_checksum	2
-../Src/binario.c:16:5:binario_validar	5
-../Src/binario.c:48:5:binario_cargar	1
-../Src/binario.c:61:5:binario_ejecutar	6
-../Src/binario.c:97:6:binario_detener	3
+../Src/binario.c:12:10:binario_calcular_checksum	2
+../Src/binario.c:27:5:binario_validar	5
+../Src/binario.c:66:5:binario_cargar	1
+../Src/binario.c:83:5:binario_ejecutar	6
+../Src/binario.c:125:6:binario_detener	3

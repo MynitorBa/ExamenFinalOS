@@ -5,14 +5,14 @@
 #define AGING_THRESHOLD 50
 #define MAX_QUANTUM_SLOTS 3
 
-// 🔥 Quantum variable según prioridad
+// Quantum variable según prioridad
 #define QUANTUM_CRITICAL 5
 #define QUANTUM_HIGH 3
 #define QUANTUM_NORMAL 2
 #define QUANTUM_LOW 1
 #define QUANTUM_IDLE 1
 
-// 🔥 Límites de ejecuciones consecutivas
+// Límites de ejecuciones consecutivas
 #define MAX_LOW_CONSECUTIVE 2
 #define MAX_NORMAL_CONSECUTIVE 4
 
@@ -40,7 +40,7 @@ static volatile uint8_t preempt_flag = 0;
 static volatile uint8_t force_schedule = 0;
 
 // ============================================================================
-// 🔥 Obtener quantum según prioridad
+// Obtener quantum según prioridad
 // ============================================================================
 static uint8_t get_task_quantum(TaskPriority priority) {
     switch(priority) {
@@ -54,7 +54,7 @@ static uint8_t get_task_quantum(TaskPriority priority) {
 }
 
 // ============================================================================
-// 🔥 Verificar si hay tareas de mayor prioridad listas
+// Verificar si hay tareas de mayor prioridad listas
 // ============================================================================
 static uint8_t has_higher_priority_ready(uint8_t task_id) {
     TaskPriority current_priority = tasks[task_id].priority;
@@ -70,7 +70,7 @@ static uint8_t has_higher_priority_ready(uint8_t task_id) {
 }
 
 // ============================================================================
-// 🔥 Scheduler con límites de ejecución consecutiva
+// Scheduler con límites de ejecución consecutiva
 // ============================================================================
 static uint8_t find_highest_priority_ready(void) {
     int8_t highest_prio = -1;
@@ -97,7 +97,7 @@ static uint8_t find_highest_priority_ready(void) {
         }
     }
 
-    // 🔥 Aplicar límite de ejecuciones consecutivas
+    // Aplicar límite de ejecuciones consecutivas
     TaskPriority selected_priority = tasks[selected_task].priority;
 
     // Si es LOW y ha ejecutado demasiadas veces, buscar alternativa
@@ -148,13 +148,13 @@ static void apply_aging(void) {
 }
 
 // ============================================================================
-// 🔥 SYSTICK HANDLER con quantum variable
+// SYSTICK HANDLER con quantum variable
 // ============================================================================
 void SysTick_Handler(void) {
     ticks++;
     quantum_counter++;
 
-    // 1️⃣ Despertar tareas bloqueadas
+    // 1️ Despertar tareas bloqueadas
     for (uint8_t i = 0; i < num_tasks; i++) {
         if (tasks[i].state == TASK_BLOCKED && ticks >= tasks[i].next_wake) {
             tasks[i].state = TASK_READY;
@@ -165,10 +165,10 @@ void SysTick_Handler(void) {
         }
     }
 
-    // 2️⃣ Aplicar aging
+    // 2️ Aplicar aging
     apply_aging();
 
-    // 3️⃣ 🔥 PREEMPTION CHECK con quantum variable
+    // 3️ PREEMPTION CHECK con quantum variable
     uint8_t current_quantum_limit = get_task_quantum(tasks[current_task].priority);
 
     if (quantum_counter >= current_quantum_limit) {
@@ -215,7 +215,7 @@ void task_delay(uint32_t ms) {
     tasks[current_task].next_wake = ticks + ms;
     tasks[current_task].state = TASK_BLOCKED;
 
-    // 🔥 CRÍTICO: Restaurar prioridad base cuando la tarea se bloquea
+    // CRÍTICO: Restaurar prioridad base cuando la tarea se bloquea
     tasks[current_task].priority = tasks[current_task].base_priority;
 
     tasks[current_task].quantum_used = 0;
@@ -297,7 +297,7 @@ void sched_kill_all_tasks(void) {
 }
 
 // ============================================================================
-// 🔥 SCHEDULER PRINCIPAL con tracking de ejecuciones
+// SCHEDULER PRINCIPAL con tracking de ejecuciones
 // ============================================================================
 void sched_start(void) {
     volatile uint32_t* SYST_CSR = (volatile uint32_t*)0xE000E010;
@@ -317,7 +317,7 @@ void sched_start(void) {
     uint8_t last_executed_task = 0xFF;
 
     while(1) {
-        // 🔥 Verificar si TODAS las tareas están suspendidas
+        // Verificar si TODAS las tareas están suspendidas
         uint8_t all_suspended = 1;
         for (uint8_t i = 0; i < num_tasks; i++) {
             if (tasks[i].state != TASK_SUSPENDED) {
@@ -326,7 +326,7 @@ void sched_start(void) {
             }
         }
 
-        // 🔥 Si todas las tareas están muertas, SALIR del scheduler
+        // Si todas las tareas están muertas, SALIR del scheduler
         if (all_suspended) {
             *SYST_CSR = 0x00;  // Detener SysTick
             num_tasks = 0;

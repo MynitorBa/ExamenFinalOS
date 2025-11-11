@@ -104,7 +104,7 @@ void mutex_reset_inheritance_count(mutex_t *m) {
 /* ===== SEMÁFOROS CON HERENCIA DE PRIORIDAD ===== */
 
 /**
- * 🔥 INICIALIZACIÓN DEL SEMÁFORO
+ * INICIALIZACIÓN DEL SEMÁFORO
  */
 void sem_init(sem_t *s, int initial, int max) {
     s->count = initial;
@@ -116,24 +116,24 @@ void sem_init(sem_t *s, int initial, int max) {
 }
 
 /**
- * 🔥 SEM_WAIT CON HERENCIA DE PRIORIDAD
+ * SEM_WAIT CON HERENCIA DE PRIORIDAD
  *
  * Comportamiento similar a mutex_lock():
  * 1. Si hay recursos disponibles (count > 0):
  *    - Decrementa count
  *    - Si count llega a 0, registra como holder
- *    - Retorna 1 ✅
+ *    - Retorna 1
  *
  * 2. Si NO hay recursos (count == 0):
  *    - Aplica herencia de prioridad al holder actual
- *    - Retorna 0 ❌ (tarea debe terminar)
+ *    - Retorna 0 (tarea debe terminar)
  */
 int sem_wait(sem_t *s) {
     int current_task = get_current_task_id();
 
     enter_critical();
 
-    // ✅ CASO 1: Hay recursos disponibles
+    // CASO 1: Hay recursos disponibles
     if (s->count > 0) {
         s->count--;
 
@@ -145,10 +145,10 @@ int sem_wait(sem_t *s) {
         }
 
         exit_critical();
-        return 1;  // ✅ Recurso adquirido
+        return 1;  // Recurso adquirido
     }
 
-    // ❌ CASO 2: NO hay recursos (count == 0)
+    // CASO 2: NO hay recursos (count == 0)
     // Aplicar herencia de prioridad al holder actual
     if (s->holder_task_id >= 0) {
         TaskPriority my_priority = get_task_priority(current_task);
@@ -164,11 +164,11 @@ int sem_wait(sem_t *s) {
     }
 
     exit_critical();
-    return 0;  // ❌ No se pudo adquirir, tarea debe terminar
+    return 0;  // No se pudo adquirir, tarea debe terminar
 }
 
 /**
- * 🔥 SEM_POST CON RESTAURACIÓN DE PRIORIDAD
+ * SEM_POST CON RESTAURACIÓN DE PRIORIDAD
  *
  * Comportamiento similar a mutex_unlock():
  * 1. Incrementa count
@@ -190,7 +190,7 @@ void sem_post(sem_t *s) {
         s->count++;
     }
 
-    // 🔥 RESTAURAR PRIORIDAD si estamos liberando el último recurso
+    // RESTAURAR PRIORIDAD si estamos liberando el último recurso
     if (was_holder) {
         TaskPriority restore_priority = (TaskPriority)s->original_priority;
 
@@ -214,7 +214,7 @@ void sem_post(sem_t *s) {
 }
 
 /**
- * 🔥 SEM_TRYWAIT SIN HERENCIA
+ * SEM_TRYWAIT SIN HERENCIA
  *
  * Intento simple sin aplicar herencia de prioridad
  */
@@ -225,7 +225,7 @@ int sem_trywait(sem_t *s) {
 
     if (s->count <= 0) {
         exit_critical();
-        return 0;  // ❌ No disponible
+        return 0;  // No disponible
     }
 
     s->count--;
@@ -238,7 +238,7 @@ int sem_trywait(sem_t *s) {
     }
 
     exit_critical();
-    return 1;  // ✅ Recurso adquirido
+    return 1;  // Recurso adquirido
 }
 
 /* ===== FUNCIONES DE ESTADÍSTICAS ===== */

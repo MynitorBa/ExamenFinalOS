@@ -1,20 +1,25 @@
 #include "api.h"
-#include "sched.h"
-#include "sync.h"
-#include "ramfs.h"
-#include "uart.h"
-#include "button.h"
-#include "loader.h"
-#include "shell.h"
-#include "pantalla.h"
-#include "buzzer.h"
-#include "aleatorio.h"
-#include <string.h>
+#include "sched.h"  // Funciones del planificador
+#include "sync.h"   // Primitivas de sincronización
+#include "ramfs.h"  // Sistema de archivos en RAM
+#include "uart.h"   // Comunicación serial
+#include "button.h" // Entrada de botones
+#include "loader.h" // Cargador de aplicaciones
+#include "shell.h"  // Intérprete de comandos
+#include "pantalla.h" // Gráficos (TFT)
+#include "buzzer.h" // Salida de audio
+#include "aleatorio.h" // Generador de números aleatorios
+#include <string.h> // Funciones de cadena (memcpy, etc.)
 
 // ========================================================================
 // SISTEMA DE TAREAS
 // ========================================================================
 
+/**
+ * Mapea la prioridad DAOS a la prioridad del kernel SCHED.
+ * @param prio Prioridad DAOS.
+ * @return 0 en éxito.
+ */
 int daos_task_create(void (*entry)(void), daos_priority_t prio) {
     TaskPriority kernel_prio;
     switch(prio) {
@@ -29,28 +34,34 @@ int daos_task_create(void (*entry)(void), daos_priority_t prio) {
     return 0;
 }
 
+/** Retarda la tarea actual en milisegundos (wrapper a task_delay). */
 void daos_sleep_ms(uint32_t ms) {
     task_delay(ms);
 }
 
+/** Cede la ejecución al planificador (wrapper a task_yield). */
 void daos_task_yield(void) {
     task_yield();
 }
 
+/** Termina la tarea actual (wrapper a task_exit). */
 void daos_task_exit(void) {
     task_exit();
 }
 
+/** Obtiene el tiempo transcurrido en milisegundos (wrapper a millis). */
 uint32_t daos_millis(void) {
     return millis();
 }
 
+/** Obtiene el ID de la tarea actualmente en ejecución. */
 uint8_t daos_get_current_task_id(void) {
     return get_current_task_id();
 }
 
-// 🔥 NUEVA FUNCIÓN: Obtiene la prioridad real (efectiva) de una tarea.
-// La prioridad real puede ser mayor que la prioridad base debido a la Herencia de Prioridad.
+/**
+ * Obtiene la prioridad real (efectiva) de una tarea.
+ */
 daos_priority_t daos_get_task_real_priority(uint8_t task_id) {
     TaskPriority kernel_prio = get_task_priority(task_id);
     switch(kernel_prio) {
@@ -63,9 +74,14 @@ daos_priority_t daos_get_task_real_priority(uint8_t task_id) {
     }
 }
 
+/**
+ * Rellena una lista con información de las tareas activas.
+ * @return Número de tareas listadas.
+ */
 int daos_get_task_list(daos_task_info_t* list, int max_tasks) {
     TaskInfo temp[16];
     int count = get_task_list(temp, max_tasks);
+    // Copia y mapeo de la estructura TaskInfo a daos_task_info_t
     for (int i = 0; i < count; i++) {
         list[i].id = temp[i].id;
         list[i].state = temp[i].state;
@@ -76,125 +92,152 @@ int daos_get_task_list(daos_task_info_t* list, int max_tasks) {
 }
 
 // ========================================================================
-// SINCRONIZACIÓN
+// SINCRONIZACIÓN (Mutex/Semáforos)
 // ========================================================================
 
+/** Inicializa un Mutex. */
 void daos_mutex_init(daos_mutex_t m) {
     if (m != NULL) mutex_init((mutex_t*)m);
 }
 
+/** Bloquea el Mutex. */
 void daos_mutex_lock(daos_mutex_t m) {
     if (m != NULL) mutex_lock((mutex_t*)m);
 }
 
+/** Desbloquea el Mutex. */
 void daos_mutex_unlock(daos_mutex_t m) {
     if (m != NULL) mutex_unlock((mutex_t*)m);
 }
 
+/** Intenta bloquear el Mutex sin esperar. */
 int daos_mutex_trylock(daos_mutex_t m) {
     if (m != NULL) return mutex_trylock((mutex_t*)m);
     return 0;
 }
 
+/** Bloquea el Mutex (utiliza la implementación simple con herencia implícita). */
 int daos_mutex_lock_ex(daos_mutex_t m) {
     if (m != NULL) {
-        return mutex_lock((mutex_t*)m);  // Llama al mutex_lock() simplificado
+        return mutex_lock((mutex_t*)m);
     }
     return 0;
 }
 
+/** Inicializa un Semáforo. */
 void daos_sem_init(daos_sem_t s, int initial, int max) {
     if (s != NULL) sem_init((sem_t*)s, initial, max);
 }
 
 // ========================================================================
-// SISTEMA DE ARCHIVOS
+// SISTEMA DE ARCHIVOS (RAMFS Wrapper)
 // ========================================================================
 
+/** Abre archivo para solo lectura. */
 int daos_open(const char* path) {
     return ramfs_open(path, RAMFS_O_RDONLY);
 }
 
+/** Lee desde un archivo. */
 int daos_read(int fd, void* buf, int n) {
     return ramfs_read(fd, buf, n);
 }
 
+/** Escribe en un archivo. */
 int daos_write(int fd, const void* buf, int n) {
     return ramfs_write(fd, buf, n);
 }
 
+/** Cierra un archivo. */
 int daos_close(int fd) {
     return ramfs_close(fd);
 }
 
+/** Mueve el puntero de lectura/escritura. */
 int daos_seek(int fd, int offset, int whence) {
     return ramfs_seek(fd, offset, whence);
 }
 
+/** Lista archivos a un buffer. */
 int daos_listdir(char* out, int max) {
     return ramfs_listdir(out, max);
 }
 
+/** Verifica si un archivo existe. */
 int daos_exists(const char* path) {
     return ramfs_exists(path);
 }
 
+/** Obtiene el tamaño de un archivo. */
 int daos_get_file_size(const char* path) {
     return ramfs_get_size(path);
 }
 
+/** Crea un archivo con contenido inicial. */
 int daos_create_file(const char* name, const void* data, uint32_t size) {
     return ramfs_create(name, data, size);
 }
 
+/** Elimina un archivo. */
 int daos_delete_file(const char* name) {
     return ramfs_delete(name);
 }
 
+/** Añade contenido al final de un archivo. */
 int daos_append(const char* name, const void* data, uint32_t size) {
     return ramfs_append(name, data, size);
 }
 
 // ========================================================================
-// GRÁFICOS
+// GRÁFICOS (Pantalla Wrapper)
 // ========================================================================
 
+/** Inicializa el subsistema gráfico. */
 void daos_gfx_init(void) {
     pantalla_init();
 }
 
+/** Limpia la pantalla. */
 void daos_gfx_clear(uint16_t color) {
     pantalla_clear(color);
 }
 
+/** Rellena un rectángulo. */
 void daos_gfx_fill_rect(int x, int y, int w, int h, uint16_t color) {
     pantalla_fill_rect((uint16_t)x, (uint16_t)y, (uint16_t)w, (uint16_t)h, color);
 }
 
+/** Dibuja un píxel. */
 void daos_gfx_draw_pixel(int x, int y, uint16_t color) {
     pantalla_draw_pixel((uint16_t)x, (uint16_t)y, color);
 }
 
+/** Dibuja texto simple. */
 void daos_gfx_draw_text(int x, int y, const char* text, uint16_t color, uint16_t bg) {
     pantalla_draw_string((uint16_t)x, (uint16_t)y, text, color, bg);
 }
 
+/** Dibuja texto escalado. */
 void daos_gfx_draw_text_large(int x, int y, const char* text, uint16_t color, uint16_t bg, uint8_t scale) {
     pantalla_draw_string_large((uint16_t)x, (uint16_t)y, text, color, bg, scale);
 }
 
+/** Dibuja el contorno de un círculo. */
 void daos_gfx_draw_circle(int x0, int y0, int radius, uint16_t color) {
     pantalla_draw_circle((uint16_t)x0, (uint16_t)y0, (uint16_t)radius, color);
 }
 
+/** Dibuja un círculo relleno. */
 void daos_gfx_draw_circle_filled(int x0, int y0, int radius, uint16_t color) {
     pantalla_draw_circle_filled((uint16_t)x0, (uint16_t)y0, (uint16_t)radius, color);
 }
 
+/** No implementado: Copia un bitmap (blit). */
 void daos_gfx_blit16(int x, int y, const uint16_t* src, int w, int h) {
     (void)x; (void)y; (void)src; (void)w; (void)h;
 }
 
+/** Dibuja el contorno de un rectángulo (compuesto por líneas). */
 void daos_gfx_draw_rect(int x, int y, int w, int h, uint16_t color) {
     daos_gfx_hline(x, y, w, color);
     daos_gfx_hline(x, y + h - 1, w, color);
@@ -202,38 +245,48 @@ void daos_gfx_draw_rect(int x, int y, int w, int h, uint16_t color) {
     daos_gfx_vline(x + w - 1, y, h, color);
 }
 
+/** Dibuja una línea horizontal. */
 void daos_gfx_hline(int x, int y, int w, uint16_t color) {
     daos_gfx_fill_rect(x, y, w, 1, color);
 }
 
+/** Dibuja una línea vertical. */
 void daos_gfx_vline(int x, int y, int h, uint16_t color) {
     daos_gfx_fill_rect(x, y, 1, h, color);
 }
 
 // ========================================================================
-// AUDIO
+// AUDIO (Buzzer Wrapper)
 // ========================================================================
 
+/** Inicializa el subsistema de audio. */
 void daos_audio_init(void) {
     Buzzer_Init();
 }
 
+/** Reproduce la melodía navideña. */
 void daos_audio_play_christmas(void) {
     buzzer_play_christmas();
 }
 
+/** Reproduce un tono. */
 void daos_audio_play_tone(uint32_t frequency, uint32_t duration_ms) {
     buzzer_play_tone(frequency, duration_ms);
 }
 
+/** Detiene la reproducción de audio. */
 void daos_audio_stop(void) {
     buzzer_stop_all();
 }
 
 // ========================================================================
-// BOTONES
+// BOTONES (Button Wrapper)
 // ========================================================================
 
+/**
+ * Consulta el estado de un botón mapeado (A, B, C, D).
+ * @return 1 si presionado, 0 si no.
+ */
 int daos_btn_poll(daos_btn_t btn) {
     int index = -1;
     switch(btn) {
@@ -246,50 +299,64 @@ int daos_btn_poll(daos_btn_t btn) {
     return button_read_index(index);
 }
 
+/** No implementado: Obtiene eventos de botón. */
 int daos_btn_get_event(daos_btn_t* out_btn, int* out_pressed) {
     (void)out_btn; (void)out_pressed;
     return 0;
 }
 
+/**
+ * Obtiene el conteo total de presiones del botón "azul" (legado).
+ * @return Conteo de presiones.
+ */
 uint32_t daos_btn_get_press_count(void) {
     static uint32_t count = 0;
     if (button_was_pressed()) count++;
     return count;
 }
 
+/** Lee el estado del botón "azul" (legado). */
 int daos_btn_read_blue(void) {
     return button_read();
 }
 
+/** Verifica si el botón "azul" (legado) fue presionado una vez. */
 int daos_btn_was_blue_pressed(void) {
     return button_was_pressed();
 }
 
+/** Actualiza el estado de todos los botones. */
 void daos_btn_update_all(void) {
     button_update();
     buttons_update();
 }
 
+/** Lee el estado de un botón por índice. */
 int daos_btn_read_by_index(int index) {
     return button_read_index(index);
 }
 
+/** Obtiene el conteo de presiones por índice. */
 uint32_t daos_btn_get_count_by_index(int index) {
     return button_get_press_count_index(index);
 }
 
+/** Resetea todos los contadores de botones. */
 void daos_btn_reset_all_counts(void) {
     buttons_reset_counts();
 }
 
+/** Obtiene el nombre del botón por índice. */
 const char* daos_btn_get_name(int index) {
     return button_get_name(index);
 }
 
+/** Obtiene la etiqueta del botón por índice. */
 const char* daos_btn_get_label(int index) {
     return button_get_label(index);
 }
 
+/** Retorna al menú principal (elimina todas las tareas). */
 void daos_return_to_menu(void) {
     extern void sched_kill_all_tasks(void);
     daos_uart_puts("\r\n[SYSTEM] Killing tasks\r\n");
@@ -300,22 +367,27 @@ void daos_return_to_menu(void) {
 // UART / DEBUG
 // ========================================================================
 
+/** Envía una cadena por UART. */
 void daos_uart_puts(const char* str) {
     uart_puts(str);
 }
 
+/** Envía un carácter por UART. */
 void daos_uart_putc(char c) {
     uart_putc(c);
 }
 
+/** Envía un entero por UART. */
 void daos_uart_putint(uint32_t num) {
     uart_putint(num);
 }
 
+/** Envía nueva línea por UART. */
 void daos_uart_newline(void) {
     uart_newline();
 }
 
+/** Causa un pánico en el kernel y detiene el sistema. */
 void daos_panic(const char* msg) {
     uart_puts("\r\n\r\n=================================\r\n");
     uart_puts("     KERNEL PANIC!\r\n");
@@ -324,14 +396,16 @@ void daos_panic(const char* msg) {
     uart_puts(msg);
     uart_puts("\r\nSystem halted.\r\n");
     uart_puts("=================================\r\n");
+    // Deshabilitar interrupciones y loop infinito
     __asm volatile("cpsid i");
     while(1) __asm volatile("wfi");
 }
 
 // ========================================================================
-// LOADER
+// LOADER (Cargador Wrapper)
 // ========================================================================
 
+/** Ejecuta una aplicación cargada. */
 int daos_loader_exec(const char* app_name, daos_priority_t priority) {
     TaskPriority kernel_prio;
     switch(priority) {
@@ -345,22 +419,26 @@ int daos_loader_exec(const char* app_name, daos_priority_t priority) {
     return loader_exec(app_name, kernel_prio);
 }
 
+/** Lista las aplicaciones disponibles. */
 void daos_loader_list_apps(void) {
     loader_list_apps();
 }
 
+/** Obtiene el número de aplicaciones. */
 int daos_loader_get_app_count(void) {
     return loader_get_app_count();
 }
 
 // ========================================================================
-// SHELL
+// SHELL (Shell Wrapper)
 // ========================================================================
 
+/** Inicializa el shell. */
 void daos_shell_init(void) {
     shell_init();
 }
 
+/** Tarea principal del shell. */
 void daos_shell_task(void) {
     shell_task();
 }
@@ -369,14 +447,17 @@ void daos_shell_task(void) {
 // INFORMACIÓN DEL SISTEMA
 // ========================================================================
 
+/** Obtiene la versión del SO. */
 const char* daos_get_version(void) {
     return "2.0.0";
 }
 
+/** Obtiene la arquitectura del SO. */
 const char* daos_get_arch(void) {
     return "ARM Cortex-M4 (STM32F446)";
 }
 
+/** Obtiene información de uso de memoria (RAMFS). */
 void daos_get_memory_info(daos_memory_info_t* info) {
     int files, used, free;
     ramfs_stats(&files, &used, &free);
@@ -386,6 +467,7 @@ void daos_get_memory_info(daos_memory_info_t* info) {
     info->total_kb = (used * 256) / 1024;
 }
 
+/** Obtiene el tiempo de funcionamiento en segundos. */
 uint32_t daos_get_uptime_seconds(void) {
     return millis() / 1000;
 }
@@ -394,6 +476,7 @@ uint32_t daos_get_uptime_seconds(void) {
 // INICIALIZACIÓN Y CONTROL
 // ========================================================================
 
+/** Inicializa todos los subsistemas del DAOS. */
 void daos_init(void) {
     uart_init();
     button_init();
@@ -405,8 +488,10 @@ void daos_init(void) {
     daos_random_init();
 }
 
+/** Inicia el planificador y el sistema operativo. */
 void daos_start(void) {
     sched_start();
+    // Loop de inactividad final (sólo si sched_start retorna)
     while(1) __asm volatile("wfi");
 }
 
@@ -414,22 +499,27 @@ void daos_start(void) {
 // SISTEMA DE ALEATORIEDAD
 // ========================================================================
 
+/** Inicializa el generador aleatorio. */
 void daos_random_init(void) {
     aleatorio_init();
 }
 
+/** Obtiene un número aleatorio de 32 bits. */
 uint32_t daos_random(void) {
     return aleatorio_obtener();
 }
 
+/** Obtiene un aleatorio en rango [min, max]. */
 uint32_t daos_random_range(uint32_t min, uint32_t max) {
     return aleatorio_rango(min, max);
 }
 
+/** Obtiene un byte aleatorio. */
 uint8_t daos_random_byte(void) {
     return aleatorio_byte();
 }
 
+/** Refresca la semilla del generador. */
 void daos_random_reseed(void) {
     aleatorio_refrescar_semilla();
 }
@@ -438,7 +528,7 @@ void daos_random_reseed(void) {
 // SISTEMA DE BINARIOS
 // ========================================================================
 
-// Calcular checksum simple
+/** Calcula el checksum simple para la estructura binaria. */
 uint32_t daos_binario_calcular_checksum(void *data, uint32_t size) {
     uint32_t checksum = 0;
     uint8_t *ptr = (uint8_t *)data;
@@ -448,7 +538,7 @@ uint32_t daos_binario_calcular_checksum(void *data, uint32_t size) {
     return checksum;
 }
 
-// Validar un binario
+/** Valida el encabezado y funciones esenciales de un binario. */
 int daos_binario_validar(daos_binario_ejecutable_t *binario) {
     if (binario == NULL) {
         daos_uart_puts("[BINARIO] Error: binario NULL\r\n");
@@ -480,20 +570,16 @@ int daos_binario_validar(daos_binario_ejecutable_t *binario) {
     return 0;
 }
 
-// Cargar un binario desde memoria o filesystem
+/** Carga (registra/valida) un binario. (Actualmente solo valida) */
 int daos_binario_cargar(const char *nombre, daos_binario_ejecutable_t *binario) {
     daos_uart_puts("[BINARIO] Cargando: ");
     daos_uart_puts(nombre);
     daos_uart_puts("\r\n");
 
-    // Aquí podrías leer desde el filesystem
-    // Por ahora, el binario ya está en memoria
-
-    // Validar el binario
     return daos_binario_validar(binario);
 }
 
-// Ejecutar un binario
+/** Ejecuta un binario: llama a init y crea tareas. */
 int daos_binario_ejecutar(daos_binario_ejecutable_t *binario) {
     if (daos_binario_validar(binario) != 0) {
         return -1;
@@ -508,7 +594,7 @@ int daos_binario_ejecutar(daos_binario_ejecutable_t *binario) {
         binario->init();
     }
 
-    // Crear las tareas del binario
+    // Crear las tareas del binario con las prioridades predefinidas
     if (binario->input_task != NULL) {
         daos_task_create(binario->input_task, DAOS_PRIO_HIGH);
         daos_uart_puts("[BINARIO] Tarea input creada\r\n");
@@ -529,7 +615,7 @@ int daos_binario_ejecutar(daos_binario_ejecutable_t *binario) {
     return 0;
 }
 
-// Detener un binario
+/** Detiene un binario: llama a cleanup. */
 void daos_binario_detener(daos_binario_ejecutable_t *binario) {
     if (binario == NULL) return;
 
@@ -542,12 +628,11 @@ void daos_binario_detener(daos_binario_ejecutable_t *binario) {
         binario->cleanup();
     }
 
-    // Aquí podrías eliminar las tareas si el scheduler lo permite
-    // Por ahora solo notificamos
+    // Notificación de detención
     daos_uart_puts("[BINARIO] Binario detenido\r\n");
 }
 
-// Crear binario desde funciones
+/** Crea una estructura binaria estática a partir de punteros a funciones. */
 daos_binario_ejecutable_t* daos_binario_crear(
     const char *nombre,
     daos_binario_tipo_t tipo,
@@ -561,21 +646,21 @@ daos_binario_ejecutable_t* daos_binario_crear(
 ) {
     static daos_binario_ejecutable_t binario;
 
-    // Configurar header
+    // Configurar header con valores fijos
     binario.header.magic = DAOS_BINARIO_MAGIC;
     binario.header.version = DAOS_BINARIO_VERSION;
     binario.header.tipo = tipo;
     binario.header.entry_point = 0;
     binario.header.size = sizeof(daos_binario_ejecutable_t);
 
-    // Copiar nombre
+    // Copiar nombre con límite
     uint32_t i;
     for (i = 0; i < 31 && nombre[i] != '\0'; i++) {
         binario.header.nombre[i] = nombre[i];
     }
     binario.header.nombre[i] = '\0';
 
-    // Asignar funciones
+    // Asignar punteros a funciones
     binario.init = init;
     binario.reset = reset;
     binario.input_task = input_task;
@@ -584,7 +669,7 @@ daos_binario_ejecutable_t* daos_binario_crear(
     binario.cleanup = cleanup;
     binario.get_state = get_state;
 
-    // Calcular checksum
+    // Calcular y asignar checksum
     binario.header.checksum = daos_binario_calcular_checksum(
         &binario,
         sizeof(daos_binario_ejecutable_t)
@@ -594,9 +679,10 @@ daos_binario_ejecutable_t* daos_binario_crear(
 }
 
 // ========================================================================
-// ESTADÍSTICAS DE MUTEX
+// ESTADÍSTICAS DE MUTEX Y PRIORIDAD
 // ========================================================================
 
+/** Obtiene el contador de herencia del Mutex. */
 uint32_t daos_mutex_get_inheritance_count(daos_mutex_t m) {
     if (m != NULL) {
         return mutex_get_inheritance_count((mutex_t*)m);
@@ -604,12 +690,18 @@ uint32_t daos_mutex_get_inheritance_count(daos_mutex_t m) {
     return 0;
 }
 
+/** Resetea el contador de herencia del Mutex. */
 void daos_mutex_reset_inheritance_count(daos_mutex_t m) {
     if (m != NULL) {
         mutex_reset_inheritance_count((mutex_t*)m);
     }
 }
 
+/**
+ * Establece la prioridad de una tarea.
+ * @param task_id ID de la tarea.
+ * @param priority Nueva prioridad DAOS.
+ */
 void daos_task_set_priority(uint8_t task_id, daos_priority_t priority) {
     TaskPriority kernel_prio;
     switch(priority) {
@@ -624,42 +716,50 @@ void daos_task_set_priority(uint8_t task_id, daos_priority_t priority) {
 }
 
 // ========================================================================
-// IMPLEMENTACIONES DE SEMÁFOROS
+// IMPLEMENTACIONES DE SEMÁFOROS (Wrapper)
 // ========================================================================
 
+/** Intenta adquirir un recurso del Semáforo (con herencia). */
 int daos_sem_wait(daos_sem_t s) {
     if (s != NULL) return sem_wait((sem_t*)s);
     return 0;
 }
 
+/** Libera un recurso del Semáforo. */
 void daos_sem_post(daos_sem_t s) {
     if (s != NULL) sem_post((sem_t*)s);
 }
 
+/** Intenta adquirir un recurso (sin herencia/bloqueo). */
 int daos_sem_trywait(daos_sem_t s) {
     if (s != NULL) return sem_trywait((sem_t*)s);
     return 0;
 }
 
+/** Obtiene el contador de herencia del Semáforo. */
 uint32_t daos_sem_get_inheritance_count(daos_sem_t s) {
     if (s != NULL) return sem_get_inheritance_count((sem_t*)s);
     return 0;
 }
 
+/** Resetea el contador de herencia del Semáforo. */
 void daos_sem_reset_inheritance_count(daos_sem_t s) {
     if (s != NULL) sem_reset_inheritance_count((sem_t*)s);
 }
 
+/** Obtiene el ID de la tarea poseedora del recurso del Semáforo. */
 int daos_sem_get_holder(daos_sem_t s) {
     if (s != NULL) return sem_get_holder((sem_t*)s);
     return -1;
 }
 
+/** Obtiene el conteo actual de recursos del Semáforo. */
 int daos_sem_get_count(daos_sem_t s) {
     if (s != NULL) return sem_get_count((sem_t*)s);
     return 0;
 }
 
+/** Obtiene el ID de la tarea dueña del Mutex. */
 uint8_t daos_mutex_get_owner(daos_mutex_t m) {
     if (m != NULL) {
         mutex_t* mutex = (mutex_t*)m;
@@ -668,6 +768,7 @@ uint8_t daos_mutex_get_owner(daos_mutex_t m) {
     return 0xFF;
 }
 
+/** Incrementa el contador de herencia de un Mutex. */
 void daos_mutex_increment_inheritance(daos_mutex_t m) {
     if (m != NULL) {
         mutex_t* mutex = (mutex_t*)m;
@@ -675,6 +776,7 @@ void daos_mutex_increment_inheritance(daos_mutex_t m) {
     }
 }
 
+/** Alias para daos_task_set_priority. */
 void daos_set_task_priority(uint8_t task_id, daos_priority_t priority) {
-    daos_task_set_priority(task_id, priority);  // Llamar a la función ya existente
+    daos_task_set_priority(task_id, priority);
 }

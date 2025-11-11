@@ -1,7 +1,7 @@
-../Src/aleatorio.c:13:17:obtener_entropia_sistema	16	static
-../Src/aleatorio.c:39:17:hash_mezcla	16	static
-../Src/aleatorio.c:52:6:aleatorio_init	24	static
-../Src/aleatorio.c:74:10:aleatorio_obtener	8	static
-../Src/aleatorio.c:87:10:aleatorio_rango	24	static
-../Src/aleatorio.c:96:9:aleatorio_byte	8	static
-../Src/aleatorio.c:100:6:aleatorio_refrescar_semilla	16	static
+../Src/aleatorio.c:18:17:obtener_entropia_sistema	16	static
+../Src/aleatorio.c:46:17:hash_mezcla	16	static
+../Src/aleatorio.c:62:6:aleatorio_init	24	static
+../Src/aleatorio.c:92:10:aleatorio_obtener	8	static
+../Src/aleatorio.c:113:10:aleatorio_rango	24	static
+../Src/aleatorio.c:127:9:aleatorio_byte	8	static
+../Src/aleatorio.c:135:6:aleatorio_refrescar_semilla	16	static
