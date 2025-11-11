@@ -1,0 +1,4 @@
+../Src/buzzer.c:62:6:Buzzer_Init	4	static
+../Src/buzzer.c:99:6:buzzer_play_christmas	48	static
+../Src/buzzer.c:132:6:buzzer_play_tone	40	static
+../Src/buzzer.c:156:6:buzzer_stop_all	4	static

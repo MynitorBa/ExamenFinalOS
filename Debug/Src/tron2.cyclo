@@ -1,0 +1,14 @@
+../Src/tron2.c:88:16:is_opposite_direction	9
+../Src/tron2.c:96:16:is_trail_at	8
+../Src/tron2.c:122:13:add_to_trail_p1	2
+../Src/tron2.c:135:13:add_to_trail_p2	2
+../Src/tron2.c:152:6:tron2_input_task	23
+../Src/tron2.c:284:6:tron2_logic_task	32
+../Src/tron2.c:385:6:tron2_render_task	31
+../Src/tron2.c:574:16:tron2_reset	1
+../Src/tron2.c:599:16:tron2_init	1
+../Src/tron2.c:615:16:tron2_cleanup	1
+../Src/tron2.c:631:25:tron2_get_state	1
+../Src/tron2.c:639:20:tron2_get_score_p1	1
+../Src/tron2.c:649:20:tron2_get_score_p2	1
+../Src/tron2.c:657:26:tron2_get_winner	1

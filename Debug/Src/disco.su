@@ -1,0 +1,15 @@
+../Src/disco.c:221:14:integer_to_string	40	static
+../Src/disco.c:254:17:get_simulated_time	4	static
+../Src/disco.c:262:13:draw_sprite_at	32	static
+../Src/disco.c:284:13:draw_platform	16	static
+../Src/disco.c:309:13:erase_player_at	112	static
+../Src/disco.c:393:13:draw_time_ball	16	static
+../Src/disco.c:397:13:check_and_show_victory	40	static
+../Src/disco.c:503:6:disco_input_task	72	static
+../Src/disco.c:710:6:disco_logic_task	48	static
+../Src/disco.c:837:6:disco_render_task	168	static
+../Src/disco.c:1134:6:disco_init	16	static
+../Src/disco.c:1279:6:disco_cleanup	8	static
+../Src/disco.c:1295:15:disco_get_state	16	static
+../Src/disco.c:1303:10:disco_get_score_p1	16	static
+../Src/disco.c:1311:10:disco_get_score_p2	16	static

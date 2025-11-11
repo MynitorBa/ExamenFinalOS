@@ -1,0 +1,11 @@
+../Src/main.c:158:6:software_reset	4	static
+../Src/main.c:170:6:daos_cleanup_current_game	8	static
+../Src/main.c:176:6:system_monitor	24	static
+../Src/main.c:202:6:button_update_task	32	static
+../Src/main.c:287:6:draw_frame	32	static
+../Src/main.c:294:6:draw_menu_option	40	static
+../Src/main.c:317:6:show_boot_animation	32	static
+../Src/main.c:337:6:show_game_banner	56	static
+../Src/main.c:368:6:wait_for_game_start	64	static
+../Src/main.c:391:6:shell_lcd_display_task	16	static
+../Src/main.c:412:5:main	136	static

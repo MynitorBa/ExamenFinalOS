@@ -1,0 +1,10 @@
+../Src/tron8.c:37:16:is_trail_at	24	static
+../Src/tron8.c:49:13:get_trail_symbol_at	24	static
+../Src/tron8.c:61:13:add_to_trail	16	static
+../Src/tron8.c:75:6:tron8_input_task	16	static
+../Src/tron8.c:115:6:tron8_logic_task	32	static
+../Src/tron8.c:212:6:tron8_render_task	48	static
+../Src/tron8.c:352:6:tron8_init	16	static
+../Src/tron8.c:400:15:tron8_get_state	4	static
+../Src/tron8.c:404:10:tron8_get_score	16	static
+../Src/tron8.c:409:16:tron8_get_winner	4	static

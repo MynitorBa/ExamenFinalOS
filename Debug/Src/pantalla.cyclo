@@ -1,0 +1,15 @@
+../Src/pantalla.c:72:13:delay_ms	2
+../Src/pantalla.c:76:13:spi_write	3
+../Src/pantalla.c:83:13:lcd_cmd	1
+../Src/pantalla.c:90:13:lcd_data	1
+../Src/pantalla.c:97:12:get_font_index	9
+../Src/pantalla.c:106:6:pantalla_init	1
+../Src/pantalla.c:153:6:pantalla_set_window	1
+../Src/pantalla.c:169:6:pantalla_clear	1
+../Src/pantalla.c:173:6:pantalla_draw_pixel	3
+../Src/pantalla.c:184:6:pantalla_fill_rect	6
+../Src/pantalla.c:200:6:pantalla_draw_circle	4
+../Src/pantalla.c:226:6:pantalla_draw_circle_filled	4
+../Src/pantalla.c:236:6:pantalla_draw_char	5
+../Src/pantalla.c:252:6:pantalla_draw_string	2
+../Src/pantalla.c:261:6:pantalla_draw_string_large	9

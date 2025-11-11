@@ -1,0 +1,15 @@
+../Src/pantalla.c:72:13:delay_ms	24	static
+../Src/pantalla.c:76:13:spi_write	16	static
+../Src/pantalla.c:83:13:lcd_cmd	16	static
+../Src/pantalla.c:90:13:lcd_data	16	static
+../Src/pantalla.c:97:12:get_font_index	16	static
+../Src/pantalla.c:106:6:pantalla_init	8	static
+../Src/pantalla.c:153:6:pantalla_set_window	24	static
+../Src/pantalla.c:169:6:pantalla_clear	24	static
+../Src/pantalla.c:173:6:pantalla_draw_pixel	16	static
+../Src/pantalla.c:184:6:pantalla_fill_rect	32	static
+../Src/pantalla.c:200:6:pantalla_draw_circle	32	static
+../Src/pantalla.c:226:6:pantalla_draw_circle_filled	32	static
+../Src/pantalla.c:236:6:pantalla_draw_char	40	static
+../Src/pantalla.c:252:6:pantalla_draw_string	48	static
+../Src/pantalla.c:261:6:pantalla_draw_string_large	48	static

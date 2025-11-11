@@ -1,0 +1,15 @@
+../Src/sync.c:6:20:enter_critical	4	static,ignoring_inline_asm
+../Src/sync.c:10:20:exit_critical	4	static,ignoring_inline_asm
+../Src/sync.c:16:6:mutex_init	16	static
+../Src/sync.c:24:5:mutex_lock	24	static
+../Src/sync.c:51:6:mutex_unlock	24	static,ignoring_inline_asm
+../Src/sync.c:78:5:mutex_trylock	24	static
+../Src/sync.c:96:10:mutex_get_inheritance_count	16	static
+../Src/sync.c:100:6:mutex_reset_inheritance_count	16	static
+../Src/sync.c:109:6:sem_init	24	static
+../Src/sync.c:131:5:sem_wait	24	static
+../Src/sync.c:180:6:sem_post	32	static,ignoring_inline_asm
+../Src/sync.c:221:5:sem_trywait	24	static
+../Src/sync.c:246:10:sem_get_inheritance_count	16	static
+../Src/sync.c:250:6:sem_reset_inheritance_count	16	static
+../Src/sync.c:254:5:sem_get_holder	16	static

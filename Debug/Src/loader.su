@@ -1,0 +1,4 @@
+../Src/loader.c:20:6:loader_init	8	static
+../Src/loader.c:26:6:loader_list_apps	16	static
+../Src/loader.c:39:5:loader_exec	24	static
+../Src/loader.c:61:5:loader_get_app_count	4	static

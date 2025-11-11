@@ -1,0 +1,10 @@
+../Src/fs.c:12:6:fs_init	3
+../Src/fs.c:29:12:find_free_inode	3
+../Src/fs.c:39:12:find_free_blocks	5
+../Src/fs.c:56:5:fs_create	11
+../Src/fs.c:110:9:fs_open	7
+../Src/fs.c:138:5:fs_read	4
+../Src/fs.c:160:6:fs_close	2
+../Src/fs.c:169:6:fs_list	3
+../Src/fs.c:188:5:fs_get_size	4
+../Src/fs.c:198:5:fs_delete	5

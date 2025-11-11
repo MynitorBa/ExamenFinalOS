@@ -1,0 +1,5 @@
+../Src/uart.c:21:6:uart_init	4	static
+../Src/uart.c:41:6:uart_putc	16	static
+../Src/uart.c:46:6:uart_puts	16	static
+../Src/uart.c:52:6:uart_putint	32	static
+../Src/uart.c:71:6:uart_newline	8	static

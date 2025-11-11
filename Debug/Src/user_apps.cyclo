@@ -1,0 +1,3 @@
+../Src/user_apps.c:27:7:user_app_hello	1
+../Src/user_apps.c:43:7:user_app_counter	3
+../Src/user_apps.c:79:7:user_app_blink	2

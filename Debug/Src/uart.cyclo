@@ -1,0 +1,5 @@
+../Src/uart.c:21:6:uart_init	1
+../Src/uart.c:41:6:uart_putc	2
+../Src/uart.c:46:6:uart_puts	2
+../Src/uart.c:52:6:uart_putint	4
+../Src/uart.c:71:6:uart_newline	1

@@ -1,0 +1,4 @@
+../Src/buzzer.c:62:6:Buzzer_Init	1
+../Src/buzzer.c:99:6:buzzer_play_christmas	8
+../Src/buzzer.c:132:6:buzzer_play_tone	6
+../Src/buzzer.c:156:6:buzzer_stop_all	1

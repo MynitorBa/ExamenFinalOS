@@ -1,0 +1,13 @@
+../Src/snake.c:81:23:random_range	1
+../Src/snake.c:85:16:is_position_occupied	4
+../Src/snake.c:99:13:place_food	4
+../Src/snake.c:119:13:draw_game_pixel	1
+../Src/snake.c:130:6:snake_input_task	12
+../Src/snake.c:235:6:snake_logic_task	28
+../Src/snake.c:373:6:snake_render_task	11
+../Src/snake.c:499:6:snake_reset	1
+../Src/snake.c:545:6:snake_init	1
+../Src/snake.c:562:6:snake_cleanup	1
+../Src/snake.c:573:15:snake_get_state	1
+../Src/snake.c:580:10:snake_get_score	1
+../Src/snake.c:587:28:snake_get_binario	1

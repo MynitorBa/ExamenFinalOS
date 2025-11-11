@@ -1,0 +1,12 @@
+../Src/button.c:23:6:button_init	4	static
+../Src/button.c:36:5:button_read	4	static
+../Src/button.c:40:6:button_update	16	static
+../Src/button.c:50:5:button_was_pressed	4	static
+../Src/button.c:106:6:buttons_init	24	static
+../Src/button.c:119:5:button_read_index	16	static
+../Src/button.c:124:10:button_get_press_count_index	16	static
+../Src/button.c:129:13:button_get_name	16	static
+../Src/button.c:134:13:button_get_label	16	static
+../Src/button.c:139:6:buttons_update	16	static
+../Src/button.c:152:5:button_check_any_pressed	16	static
+../Src/button.c:162:6:buttons_reset_counts	16	static
